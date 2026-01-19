@@ -1,4 +1,4 @@
-import { Heart, Calendar, Users, Phone, Shield, Clock } from "lucide-react";
+import { Heart, Calendar, Users, Phone, Shield } from "lucide-react";
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -27,12 +27,6 @@ export const ServicesSection = () => {
       title: "Appointment Accompaniment",
       description:
         "We're there with your loved one at every doctor's visit, ensuring they never face an appointment alone.",
-    },
-    {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Safe Transportation",
-      description:
-        "Reliable, comfortable rides to appointments and errands throughout Ottawa and surrounding areas.",
     },
     {
       icon: <Heart className="w-6 h-6" />,

@@ -6,9 +6,9 @@ export const Footer = () => {
   const footerLinks = {
     services: [
       { label: "Appointment Accompaniment", href: "#services" },
-      { label: "Transportation", href: "#services" },
       { label: "Health Tracking", href: "#services" },
       { label: "Family Connection", href: "#services" },
+      { label: "Emergency Support", href: "#services" },
     ],
     company: [
       { label: "About Us", href: "#about" },
@@ -42,7 +42,7 @@ export const Footer = () => {
               compassionate accompaniment, health tracking, and peace of mind.
             </p>
             <p className="text-sm text-background/50">
-              Part of Atomic Bond Consulting
+              Caring for Ottawa seniors since 2024
             </p>
           </div>
 
