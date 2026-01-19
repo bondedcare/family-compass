@@ -1,30 +1,45 @@
 import { Heart } from "lucide-react";
-
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
-
   const footerLinks = {
-    services: [
-      { label: "Appointment Accompaniment", href: "#services" },
-      { label: "Health Tracking", href: "#services" },
-      { label: "Family Connection", href: "#services" },
-      { label: "Emergency Support", href: "#services" },
-    ],
-    company: [
-      { label: "About Us", href: "#about" },
-      { label: "Contact", href: "#contact" },
-      { label: "Careers", href: "#" },
-      { label: "Blog", href: "#" },
-    ],
-    legal: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "Accessibility", href: "#" },
-    ],
+    services: [{
+      label: "Appointment Accompaniment",
+      href: "#services"
+    }, {
+      label: "Health Tracking",
+      href: "#services"
+    }, {
+      label: "Family Connection",
+      href: "#services"
+    }, {
+      label: "Emergency Support",
+      href: "#services"
+    }],
+    company: [{
+      label: "About Us",
+      href: "#about"
+    }, {
+      label: "Contact",
+      href: "#contact"
+    }, {
+      label: "Careers",
+      href: "#"
+    }, {
+      label: "Blog",
+      href: "#"
+    }],
+    legal: [{
+      label: "Privacy Policy",
+      href: "#"
+    }, {
+      label: "Terms of Service",
+      href: "#"
+    }, {
+      label: "Accessibility",
+      href: "#"
+    }]
   };
-
-  return (
-    <footer className="bg-foreground text-background/90 py-16">
+  return <footer className="bg-foreground text-background/90 py-16">
       <div className="container px-4 md:px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
@@ -41,9 +56,7 @@ export const Footer = () => {
               Ottawa's caring companion for seniors and families. We provide
               compassionate accompaniment, health tracking, and peace of mind.
             </p>
-            <p className="text-sm text-background/50">
-              Caring for Ottawa seniors since 2024
-            </p>
+            <p className="text-sm text-background/50">Caring for Ottawa's Seniors and Caregivers</p>
           </div>
 
           {/* Services */}
@@ -52,16 +65,11 @@ export const Footer = () => {
               Services
             </h4>
             <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-background/70 hover:text-background transition-colors"
-                  >
+              {footerLinks.services.map(link => <li key={link.label}>
+                  <a href={link.href} className="text-background/70 hover:text-background transition-colors">
                     {link.label}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -71,16 +79,11 @@ export const Footer = () => {
               Company
             </h4>
             <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-background/70 hover:text-background transition-colors"
-                  >
+              {footerLinks.company.map(link => <li key={link.label}>
+                  <a href={link.href} className="text-background/70 hover:text-background transition-colors">
                     {link.label}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -90,16 +93,11 @@ export const Footer = () => {
               Legal
             </h4>
             <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-background/70 hover:text-background transition-colors"
-                  >
+              {footerLinks.legal.map(link => <li key={link.label}>
+                  <a href={link.href} className="text-background/70 hover:text-background transition-colors">
                     {link.label}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
         </div>
@@ -111,6 +109,5 @@ export const Footer = () => {
           <p>Made with ❤️ in Ottawa, Canada</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };

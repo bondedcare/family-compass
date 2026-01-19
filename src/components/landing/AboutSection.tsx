@@ -1,15 +1,23 @@
 import { Heart, Users, MapPin, Star } from "lucide-react";
-
 export const AboutSection = () => {
-  const stats = [
-    { icon: <Users className="w-5 h-5" />, value: "200+", label: "Families Served" },
-    { icon: <MapPin className="w-5 h-5" />, value: "Ottawa", label: "& Surrounding Areas" },
-    { icon: <Star className="w-5 h-5" />, value: "4.9", label: "Average Rating" },
-    { icon: <Heart className="w-5 h-5" />, value: "24/7", label: "Support Available" },
-  ];
-
-  return (
-    <section id="about" className="py-12 md:py-16 bg-muted/30">
+  const stats = [{
+    icon: <Users className="w-5 h-5" />,
+    value: "200+",
+    label: "Families Served"
+  }, {
+    icon: <MapPin className="w-5 h-5" />,
+    value: "Ottawa",
+    label: "& Surrounding Areas"
+  }, {
+    icon: <Star className="w-5 h-5" />,
+    value: "4.9",
+    label: "Average Rating"
+  }, {
+    icon: <Heart className="w-5 h-5" />,
+    value: "24/7",
+    label: "Support Available"
+  }];
+  return <section id="about" className="py-12 md:py-16 bg-muted/30">
       <div className="container px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Visual side */}
@@ -26,8 +34,7 @@ export const AboutSection = () => {
                       Bonded Care
                     </p>
                     <p className="text-muted-foreground">
-                      Part of Atomic Bond Consulting
-                    </p>
+                  </p>
                   </div>
                 </div>
               </div>
@@ -69,33 +76,15 @@ export const AboutSection = () => {
                 Built on bonds that last
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  Bonded Care was born from a simple belief: every senior
-                  deserves care that feels personal, warm, and genuine. We're
-                  not just a service—we're an extension of your family.
-                </p>
-                <p>
-                  As part of Atomic Bond Consulting, we bring the same
-                  commitment to trust and reliability that defines everything we
-                  do. Our caregivers don't just show up; they build real
-                  connections with the people they serve.
-                </p>
-                <p>
-                  Based in Ottawa, we understand our community. We know the
-                  neighborhoods, the healthcare providers, and the unique needs
-                  of seniors in our region. That local knowledge, combined with
-                  our caring approach, makes all the difference.
-                </p>
+                <p>Bonded Care was born from a simple belief: every person deserves care that feels personal, warm, and genuine. We're not just a service—we're an extension of your family.</p>
+                <p>We bring the same commitment to trust and reliability that defines everything we do. </p>
+                <p>Based in Ottawa, we understand our community. We know the neighbourhoods, the healthcare providers, and the unique needs of seniors in our region. That local knowledge, combined with our caring approach, makes all the difference.</p>
               </div>
             </div>
 
             {/* Stats grid */}
             <div className="grid grid-cols-2 gap-4 pt-4">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="bg-card rounded-xl p-5 border border-border"
-                >
+              {stats.map(stat => <div key={stat.label} className="bg-card rounded-xl p-5 border border-border">
                   <div className="flex items-center gap-2 text-primary mb-2">
                     {stat.icon}
                     <span className="font-display text-2xl font-bold text-foreground">
@@ -103,12 +92,10 @@ export const AboutSection = () => {
                     </span>
                   </div>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
