@@ -52,6 +52,12 @@ export const ServicesSection = () => {
       description:
         "Always someone to call. Our caring team is here whenever you need support or reassurance.",
     },
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: "Caregiver Portal",
+      description:
+        "A dedicated space for caregivers to manage assignments, log visit notes, and stay connected with families.",
+    },
   ];
 
   return (
