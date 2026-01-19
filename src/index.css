@@ -5,9 +5,10 @@
 /* Bonded Care Design System
    Earthy, warm palette: sage green, terracotta, cream
    Feels like visiting a caring friend
+   Typography: Lora (headings) + Inter (body) - warm, modern, accessible
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -125,11 +126,11 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Merriweather', serif;
+    font-family: 'Lora', serif;
   }
 }
 
@@ -140,10 +141,10 @@
   }
 
   .font-display {
-    font-family: 'Merriweather', serif;
+    font-family: 'Lora', serif;
   }
 
   .font-body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 }
