@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
+import { useCaregiverPreferences } from '@/contexts/CaregiverPreferencesContext';
+import { useAdaptiveUI } from '@/hooks/useAdaptiveUI';
 import { supabase } from '@/integrations/supabase/client';
 import { DashboardHeader } from '@/components/dashboard/DashboardHeader';
 import { AppointmentCard } from '@/components/dashboard/AppointmentCard';
@@ -8,6 +10,7 @@ import { AlertCard } from '@/components/dashboard/AlertCard';
 import { QuickActions } from '@/components/dashboard/QuickActions';
 import { EmptyState } from '@/components/dashboard/EmptyState';
 import { AddAppointmentDialog } from '@/components/dashboard/AddAppointmentDialog';
+import { AdaptiveWelcome } from '@/components/dashboard/AdaptiveWelcome';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, Calendar, Bell } from 'lucide-react';
 import { toast } from 'sonner';
@@ -189,15 +192,8 @@ const FamilyDashboard = () => {
       <DashboardHeader userName={profile?.full_name || 'User'} />
       
       <main className="container mx-auto px-4 py-8">
-        {/* Welcome Section */}
-        <div className="mb-8">
-          <h1 className="font-display text-3xl font-bold text-foreground">
-            Hello, {profile?.full_name?.split(' ')[0] || 'there'}
-          </h1>
-          <p className="text-muted-foreground mt-1">
-            Here's what's happening with your loved ones' care.
-          </p>
-        </div>
+        {/* Adaptive Welcome Section */}
+        <AdaptiveWelcome userName={profile?.full_name || 'User'} />
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Content */}

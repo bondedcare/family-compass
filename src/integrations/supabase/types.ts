@@ -257,27 +257,33 @@ export type Database = {
       profiles: {
         Row: {
           avatar_url: string | null
+          caregiver_type: Database["public"]["Enums"]["caregiver_type"] | null
           created_at: string
           full_name: string
           id: string
+          notification_preferences: Json | null
           phone: string | null
           updated_at: string
           user_id: string
         }
         Insert: {
           avatar_url?: string | null
+          caregiver_type?: Database["public"]["Enums"]["caregiver_type"] | null
           created_at?: string
           full_name: string
           id?: string
+          notification_preferences?: Json | null
           phone?: string | null
           updated_at?: string
           user_id: string
         }
         Update: {
           avatar_url?: string | null
+          caregiver_type?: Database["public"]["Enums"]["caregiver_type"] | null
           created_at?: string
           full_name?: string
           id?: string
+          notification_preferences?: Json | null
           phone?: string | null
           updated_at?: string
           user_id?: string
@@ -414,6 +420,10 @@ export type Database = {
     }
     Enums: {
       app_role: "family" | "caregiver" | "senior"
+      caregiver_type:
+        | "primary_coordinator"
+        | "working_caregiver"
+        | "long_distance_caregiver"
       transportation_method:
         | "family_member"
         | "caregiver"
@@ -554,6 +564,11 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["family", "caregiver", "senior"],
+      caregiver_type: [
+        "primary_coordinator",
+        "working_caregiver",
+        "long_distance_caregiver",
+      ],
       transportation_method: [
         "family_member",
         "caregiver",
