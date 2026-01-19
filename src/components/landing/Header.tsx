@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,10 +41,12 @@ export const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" className="rounded-xl">
-              Sign In
+            <Button variant="ghost" className="rounded-xl" asChild>
+              <Link to="/auth">Sign In</Link>
             </Button>
-            <Button className="rounded-xl">Get Started</Button>
+            <Button className="rounded-xl" asChild>
+              <Link to="/auth">Get Started</Link>
+            </Button>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -76,10 +79,12 @@ export const Header = () => {
               ))}
               <hr className="my-2 border-border" />
               <div className="flex flex-col gap-2 px-4">
-                <Button variant="ghost" className="w-full rounded-xl justify-start">
-                  Sign In
+                <Button variant="ghost" className="w-full rounded-xl justify-start" asChild>
+                  <Link to="/auth">Sign In</Link>
                 </Button>
-                <Button className="w-full rounded-xl">Get Started</Button>
+                <Button className="w-full rounded-xl" asChild>
+                  <Link to="/auth">Get Started</Link>
+                </Button>
               </div>
             </nav>
           </div>

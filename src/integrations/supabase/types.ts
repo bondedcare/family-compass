@@ -14,16 +14,418 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      appointments: {
+        Row: {
+          appointment_date: string
+          appointment_time: string
+          created_at: string
+          created_by_profile_id: string | null
+          description: string | null
+          id: string
+          location: string | null
+          notes: string | null
+          senior_id: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          appointment_date: string
+          appointment_time: string
+          created_at?: string
+          created_by_profile_id?: string | null
+          description?: string | null
+          id?: string
+          location?: string | null
+          notes?: string | null
+          senior_id: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          appointment_date?: string
+          appointment_time?: string
+          created_at?: string
+          created_by_profile_id?: string | null
+          description?: string | null
+          id?: string
+          location?: string | null
+          notes?: string | null
+          senior_id?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "appointments_created_by_profile_id_fkey"
+            columns: ["created_by_profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "appointments_senior_id_fkey"
+            columns: ["senior_id"]
+            isOneToOne: false
+            referencedRelation: "seniors"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      care_notes: {
+        Row: {
+          appointment_id: string | null
+          author_profile_id: string
+          content: string
+          created_at: string
+          id: string
+          senior_id: string
+        }
+        Insert: {
+          appointment_id?: string | null
+          author_profile_id: string
+          content: string
+          created_at?: string
+          id?: string
+          senior_id: string
+        }
+        Update: {
+          appointment_id?: string | null
+          author_profile_id?: string
+          content?: string
+          created_at?: string
+          id?: string
+          senior_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "care_notes_appointment_id_fkey"
+            columns: ["appointment_id"]
+            isOneToOne: false
+            referencedRelation: "appointments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "care_notes_author_profile_id_fkey"
+            columns: ["author_profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "care_notes_senior_id_fkey"
+            columns: ["senior_id"]
+            isOneToOne: false
+            referencedRelation: "seniors"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      caregiver_assignments: {
+        Row: {
+          assigned_at: string
+          caregiver_profile_id: string
+          id: string
+          is_active: boolean | null
+          senior_id: string
+        }
+        Insert: {
+          assigned_at?: string
+          caregiver_profile_id: string
+          id?: string
+          is_active?: boolean | null
+          senior_id: string
+        }
+        Update: {
+          assigned_at?: string
+          caregiver_profile_id?: string
+          id?: string
+          is_active?: boolean | null
+          senior_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "caregiver_assignments_caregiver_profile_id_fkey"
+            columns: ["caregiver_profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "caregiver_assignments_senior_id_fkey"
+            columns: ["senior_id"]
+            isOneToOne: false
+            referencedRelation: "seniors"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      emergency_info: {
+        Row: {
+          additional_notes: string | null
+          allergies: string | null
+          doctor_name: string | null
+          doctor_phone: string | null
+          emergency_contact_name: string | null
+          emergency_contact_phone: string | null
+          emergency_contact_relationship: string | null
+          hospital_preference: string | null
+          id: string
+          medications: string | null
+          senior_id: string
+          updated_at: string
+        }
+        Insert: {
+          additional_notes?: string | null
+          allergies?: string | null
+          doctor_name?: string | null
+          doctor_phone?: string | null
+          emergency_contact_name?: string | null
+          emergency_contact_phone?: string | null
+          emergency_contact_relationship?: string | null
+          hospital_preference?: string | null
+          id?: string
+          medications?: string | null
+          senior_id: string
+          updated_at?: string
+        }
+        Update: {
+          additional_notes?: string | null
+          allergies?: string | null
+          doctor_name?: string | null
+          doctor_phone?: string | null
+          emergency_contact_name?: string | null
+          emergency_contact_phone?: string | null
+          emergency_contact_relationship?: string | null
+          hospital_preference?: string | null
+          id?: string
+          medications?: string | null
+          senior_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "emergency_info_senior_id_fkey"
+            columns: ["senior_id"]
+            isOneToOne: true
+            referencedRelation: "seniors"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      family_senior_links: {
+        Row: {
+          created_at: string
+          family_profile_id: string
+          id: string
+          is_primary_contact: boolean | null
+          relationship: string | null
+          senior_id: string
+        }
+        Insert: {
+          created_at?: string
+          family_profile_id: string
+          id?: string
+          is_primary_contact?: boolean | null
+          relationship?: string | null
+          senior_id: string
+        }
+        Update: {
+          created_at?: string
+          family_profile_id?: string
+          id?: string
+          is_primary_contact?: boolean | null
+          relationship?: string | null
+          senior_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "family_senior_links_family_profile_id_fkey"
+            columns: ["family_profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "family_senior_links_senior_id_fkey"
+            columns: ["senior_id"]
+            isOneToOne: false
+            referencedRelation: "seniors"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          full_name: string
+          id: string
+          phone: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          full_name: string
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          full_name?: string
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      seniors: {
+        Row: {
+          created_at: string
+          date_of_birth: string | null
+          id: string
+          medical_notes: string | null
+          mobility_notes: string | null
+          profile_id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          date_of_birth?: string | null
+          id?: string
+          medical_notes?: string | null
+          mobility_notes?: string | null
+          profile_id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          date_of_birth?: string | null
+          id?: string
+          medical_notes?: string | null
+          mobility_notes?: string | null
+          profile_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "seniors_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      transportation_plans: {
+        Row: {
+          appointment_id: string
+          created_at: string
+          id: string
+          method: Database["public"]["Enums"]["transportation_method"]
+          notes: string | null
+          pickup_time: string | null
+          responsible_profile_id: string | null
+          status: Database["public"]["Enums"]["transportation_status"]
+          updated_at: string
+        }
+        Insert: {
+          appointment_id: string
+          created_at?: string
+          id?: string
+          method: Database["public"]["Enums"]["transportation_method"]
+          notes?: string | null
+          pickup_time?: string | null
+          responsible_profile_id?: string | null
+          status?: Database["public"]["Enums"]["transportation_status"]
+          updated_at?: string
+        }
+        Update: {
+          appointment_id?: string
+          created_at?: string
+          id?: string
+          method?: Database["public"]["Enums"]["transportation_method"]
+          notes?: string | null
+          pickup_time?: string | null
+          responsible_profile_id?: string | null
+          status?: Database["public"]["Enums"]["transportation_status"]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "transportation_plans_appointment_id_fkey"
+            columns: ["appointment_id"]
+            isOneToOne: true
+            referencedRelation: "appointments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "transportation_plans_responsible_profile_id_fkey"
+            columns: ["responsible_profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      can_access_senior: {
+        Args: { _senior_id: string; _user_id: string }
+        Returns: boolean
+      }
+      get_profile_id: { Args: { _user_id: string }; Returns: string }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "family" | "caregiver" | "senior"
+      transportation_method:
+        | "family_member"
+        | "caregiver"
+        | "taxi_rideshare"
+        | "public_transit"
+        | "other"
+      transportation_status:
+        | "planned"
+        | "confirmed"
+        | "in_progress"
+        | "completed"
+        | "cancelled"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +552,22 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["family", "caregiver", "senior"],
+      transportation_method: [
+        "family_member",
+        "caregiver",
+        "taxi_rideshare",
+        "public_transit",
+        "other",
+      ],
+      transportation_status: [
+        "planned",
+        "confirmed",
+        "in_progress",
+        "completed",
+        "cancelled",
+      ],
+    },
   },
 } as const
