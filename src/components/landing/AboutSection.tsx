@@ -9,7 +9,7 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-28 bg-muted/30">
+    <section id="about" className="py-12 md:py-16 bg-muted/30">
       <div className="container px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Visual side */}
