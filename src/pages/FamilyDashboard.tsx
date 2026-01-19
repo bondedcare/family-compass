@@ -7,6 +7,7 @@ import { AppointmentCard } from '@/components/dashboard/AppointmentCard';
 import { AlertCard } from '@/components/dashboard/AlertCard';
 import { QuickActions } from '@/components/dashboard/QuickActions';
 import { EmptyState } from '@/components/dashboard/EmptyState';
+import { AddAppointmentDialog } from '@/components/dashboard/AddAppointmentDialog';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, Calendar, Bell } from 'lucide-react';
 import { toast } from 'sonner';
@@ -55,6 +56,7 @@ const FamilyDashboard = () => {
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [alerts, setAlerts] = useState<Alert[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showAddAppointment, setShowAddAppointment] = useState(false);
 
   useEffect(() => {
     if (user) {
@@ -157,7 +159,11 @@ const FamilyDashboard = () => {
   }
 
   const handleAddAppointment = () => {
-    toast.info('Add Appointment feature coming soon!');
+    setShowAddAppointment(true);
+  };
+
+  const handleAppointmentAdded = () => {
+    fetchDashboardData();
   };
 
   const handleAddTransportation = () => {
@@ -259,6 +265,12 @@ const FamilyDashboard = () => {
           </aside>
         </div>
       </main>
+
+      <AddAppointmentDialog
+        open={showAddAppointment}
+        onOpenChange={setShowAddAppointment}
+        onSuccess={handleAppointmentAdded}
+      />
     </div>
   );
 };
