@@ -1,4 +1,4 @@
-import { Gift, ShoppingCart, Package, Home, Heart, Users } from "lucide-react";
+import { Gift, ShoppingCart, Package, Wifi, Heart, Users } from "lucide-react";
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -41,10 +41,10 @@ export const ServicesSection = () => {
         "Pharmacy runs, returns, drop-offs—small tasks handled with care so nothing falls through the cracks.",
     },
     {
-      icon: <Home className="w-6 h-6" />,
-      title: "Light Household Help",
+      icon: <Wifi className="w-6 h-6" />,
+      title: "Home Tech Setup",
       description:
-        "Simple, non-skilled tasks like tidying, organizing, or watering plants—respectful help that maintains dignity.",
+        "Setting up voice assistants, emergency systems, and smart devices—plus gentle troubleshooting when things don't work.",
     },
     {
       icon: <Heart className="w-6 h-6" />,
