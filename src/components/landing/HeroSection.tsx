@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Heart, MapPin } from "lucide-react";
+import { ArrowRight, Heart, MapPin, Gift, ShoppingBag, Package } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
   return (
@@ -24,13 +25,13 @@ export const HeroSection = () => {
 
             <div className="space-y-6">
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-balance">
-                Caring for your loved ones,{" "}
-                <span className="text-primary">like family</span>
+                Thoughtful everyday help,{" "}
+                <span className="text-primary">coordinated with care</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Bonded Care provides compassionate accompaniment, health
-                tracking, and family connection for Ottawa's seniors. Because
-                everyone deserves care that feels like home.
+                Bonded Care helps families coordinate personalized support for
+                seniors—from groceries and errands to gifts and light household
+                help. Not a delivery app. A trusted extension of family care.
               </p>
             </div>
 
@@ -38,9 +39,12 @@ export const HeroSection = () => {
               <Button
                 size="lg"
                 className="text-base px-8 py-6 rounded-xl shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
+                asChild
               >
-                Get Started
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <Link to="/auth">
+                  Get Started
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
               </Button>
               <Button
                 variant="outline"
@@ -77,14 +81,14 @@ export const HeroSection = () => {
                 <div className="bg-card rounded-2xl p-6 shadow-sm border border-border">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Heart className="w-6 h-6 text-primary" />
+                      <Gift className="w-6 h-6 text-primary" />
                     </div>
                     <div>
                       <h4 className="font-display font-semibold text-foreground mb-1">
-                        Today's Check-in
+                        Care Package Delivered
                       </h4>
                       <p className="text-sm text-muted-foreground">
-                        Mom is feeling great! Had a lovely visit with Sarah.
+                        "Thinking of you, Mom" — Sarah's gift arrived safely.
                       </p>
                     </div>
                   </div>
@@ -93,32 +97,35 @@ export const HeroSection = () => {
                 <div className="bg-card rounded-2xl p-6 shadow-sm border border-border">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-secondary" />
+                      <ShoppingBag className="w-6 h-6 text-secondary" />
                     </div>
                     <div>
                       <h4 className="font-display font-semibold text-foreground mb-1">
-                        Upcoming Appointment
+                        Weekly Groceries
                       </h4>
                       <p className="text-sm text-muted-foreground">
-                        Dr. Thompson - Thursday at 2:00 PM
+                        Thursday delivery — remembered the extra-ripe bananas.
                       </p>
                       <span className="inline-block mt-2 px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
-                        Transportation confirmed
+                        Recurring request
                       </span>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-card rounded-2xl p-6 shadow-sm border border-border">
-                  <div className="flex items-center gap-3">
-                    <div className="flex -space-x-2">
-                      <div className="w-8 h-8 rounded-full bg-sage-200 border-2 border-card" />
-                      <div className="w-8 h-8 rounded-full bg-terracotta-100 border-2 border-card" />
-                      <div className="w-8 h-8 rounded-full bg-sage-300 border-2 border-card" />
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-sage-100 flex items-center justify-center flex-shrink-0">
+                      <Package className="w-6 h-6 text-sage-600" />
                     </div>
-                    <span className="text-sm text-muted-foreground">
-                      Family members connected
-                    </span>
+                    <div>
+                      <h4 className="font-display font-semibold text-foreground mb-1">
+                        Pharmacy Pickup
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        Prescriptions collected with care notes attached.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

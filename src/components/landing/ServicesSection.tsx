@@ -1,4 +1,4 @@
-import { Heart, Calendar, Users, Phone, Shield } from "lucide-react";
+import { Gift, ShoppingCart, Package, Home, Heart, Users } from "lucide-react";
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -23,40 +23,40 @@ const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
 export const ServicesSection = () => {
   const services = [
     {
-      icon: <Calendar className="w-6 h-6" />,
-      title: "Appointment Accompaniment",
+      icon: <Gift className="w-6 h-6" />,
+      title: "Gifts & Care Packages",
       description:
-        "We're there with your loved one at every doctor's visit, ensuring they never face an appointment alone.",
+        "Send thoughtful gifts and care packages with personal notes—delivered with warmth, not just dropped off.",
+    },
+    {
+      icon: <ShoppingCart className="w-6 h-6" />,
+      title: "Grocery & Essentials",
+      description:
+        "Weekly shopping or one-time runs, always with attention to preferences, brands, and special requests.",
+    },
+    {
+      icon: <Package className="w-6 h-6" />,
+      title: "Errands & Pickups",
+      description:
+        "Pharmacy runs, returns, drop-offs—small tasks handled with care so nothing falls through the cracks.",
+    },
+    {
+      icon: <Home className="w-6 h-6" />,
+      title: "Light Household Help",
+      description:
+        "Simple, non-skilled tasks like tidying, organizing, or watering plants—respectful help that maintains dignity.",
     },
     {
       icon: <Heart className="w-6 h-6" />,
-      title: "Health Tracking",
+      title: "Personal Context",
       description:
-        "Simple tools to track medications, vitals, and health trends—giving you peace of mind.",
+        "Every request includes preferences, routines, and comfort notes—because care is about knowing the person.",
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Family Connection",
+      title: "Family Coordination",
       description:
-        "Stay informed and connected with real-time updates and shared care coordination.",
-    },
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: "Emergency Support",
-      description:
-        "Quick access to emergency contacts, medical info, and care history when it matters most.",
-    },
-    {
-      icon: <Phone className="w-6 h-6" />,
-      title: "24/7 Care Line",
-      description:
-        "Always someone to call. Our caring team is here whenever you need support or reassurance.",
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Caregiver Portal",
-      description:
-        "A dedicated space for caregivers to manage assignments, log visit notes, and stay connected with families.",
+        "A shared space for families to plan, track, and coordinate support—so caregiving feels less scattered.",
     },
   ];
 
@@ -65,15 +65,15 @@ export const ServicesSection = () => {
       <div className="container px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-            Our Services
+            How We Help
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            Care that feels like family
+            Everyday support, thoughtfully done
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            From appointments to daily check-ins, we provide comprehensive
-            support that helps seniors live independently while keeping families
-            connected.
+            Not a delivery app. Not a gig marketplace. Just personalized,
+            family-coordinated help that treats seniors with the dignity and
+            care they deserve.
           </p>
         </div>
 
