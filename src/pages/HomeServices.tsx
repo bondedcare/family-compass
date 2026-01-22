@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { DashboardHeader } from '@/components/dashboard/DashboardHeader';
+import { ServiceRequestDialog } from '@/components/services/ServiceRequestDialog';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -87,6 +89,7 @@ const techServices = [
 
 const HomeServices = () => {
   const { user, loading: authLoading } = useAuth();
+  const [selectedService, setSelectedService] = useState<{ id: string; title: string } | null>(null);
 
   if (authLoading) {
     return (
@@ -103,8 +106,12 @@ const HomeServices = () => {
     return <Navigate to="/auth" replace />;
   }
 
-  const handleRequestService = (serviceId: string) => {
-    toast.info(`${serviceId} service request coming soon!`);
+  const handleRequestService = (serviceId: string, serviceTitle: string) => {
+    setSelectedService({ id: serviceId, title: serviceTitle });
+  };
+
+  const handleServiceRequestSuccess = () => {
+    toast.success('Your request has been submitted. We\'ll coordinate with a helper soon!');
   };
 
   return (
@@ -156,7 +163,7 @@ const HomeServices = () => {
                 </ul>
                 <Button 
                   className="w-full group-hover:bg-primary/90"
-                  onClick={() => handleRequestService(service.id)}
+                  onClick={() => handleRequestService(service.id, service.title)}
                 >
                   Request Service
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -220,6 +227,15 @@ const HomeServices = () => {
           </div>
         </section>
       </main>
+
+      {/* Service Request Dialog */}
+      <ServiceRequestDialog
+        open={!!selectedService}
+        onOpenChange={(open) => !open && setSelectedService(null)}
+        serviceType={selectedService?.id || ''}
+        serviceTitle={selectedService?.title || ''}
+        onSuccess={handleServiceRequestSuccess}
+      />
     </div>
   );
 };
