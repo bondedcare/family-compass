@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthContext';
 import { useCaregiverPreferences } from '@/contexts/CaregiverPreferencesContext';
 import { CAREGIVER_TYPE_CONFIGS } from '@/types/caregiver';
-import { Heart, LogOut, User, Settings, ClipboardList, Briefcase, Globe } from 'lucide-react';
+import { Heart, LogOut, User, Settings, ClipboardList, Briefcase, Globe, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import {
   DropdownMenu,
@@ -85,6 +85,12 @@ export const DashboardHeader = ({ userName }: DashboardHeaderProps) => {
                 <Link to="/settings" className="cursor-pointer">
                   <Settings className="mr-2 h-4 w-4" />
                   <span>Settings</span>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/services" className="cursor-pointer">
+                  <Home className="mr-2 h-4 w-4" />
+                  <span>Home Services</span>
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
