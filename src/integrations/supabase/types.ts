@@ -594,7 +594,7 @@ export type Database = {
       }
     }
     Enums: {
-      app_role: "family" | "caregiver" | "senior"
+      app_role: "family" | "caregiver" | "senior" | "admin"
       caregiver_type:
         | "primary_coordinator"
         | "working_caregiver"
@@ -750,7 +750,7 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      app_role: ["family", "caregiver", "senior"],
+      app_role: ["family", "caregiver", "senior", "admin"],
       caregiver_type: [
         "primary_coordinator",
         "working_caregiver",
