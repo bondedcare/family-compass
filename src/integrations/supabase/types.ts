@@ -328,9 +328,107 @@ export type Database = {
           },
         ]
       }
+      service_request_comments: {
+        Row: {
+          author_profile_id: string
+          content: string
+          created_at: string
+          id: string
+          is_internal: boolean
+          service_request_id: string
+          updated_at: string
+        }
+        Insert: {
+          author_profile_id: string
+          content: string
+          created_at?: string
+          id?: string
+          is_internal?: boolean
+          service_request_id: string
+          updated_at?: string
+        }
+        Update: {
+          author_profile_id?: string
+          content?: string
+          created_at?: string
+          id?: string
+          is_internal?: boolean
+          service_request_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "service_request_comments_author_profile_id_fkey"
+            columns: ["author_profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "service_request_comments_service_request_id_fkey"
+            columns: ["service_request_id"]
+            isOneToOne: false
+            referencedRelation: "service_requests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      service_request_status_history: {
+        Row: {
+          changed_by_profile_id: string | null
+          created_at: string
+          id: string
+          new_status: Database["public"]["Enums"]["service_request_status"]
+          notes: string | null
+          old_status:
+            | Database["public"]["Enums"]["service_request_status"]
+            | null
+          service_request_id: string
+        }
+        Insert: {
+          changed_by_profile_id?: string | null
+          created_at?: string
+          id?: string
+          new_status: Database["public"]["Enums"]["service_request_status"]
+          notes?: string | null
+          old_status?:
+            | Database["public"]["Enums"]["service_request_status"]
+            | null
+          service_request_id: string
+        }
+        Update: {
+          changed_by_profile_id?: string | null
+          created_at?: string
+          id?: string
+          new_status?: Database["public"]["Enums"]["service_request_status"]
+          notes?: string | null
+          old_status?:
+            | Database["public"]["Enums"]["service_request_status"]
+            | null
+          service_request_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "service_request_status_history_changed_by_profile_id_fkey"
+            columns: ["changed_by_profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "service_request_status_history_service_request_id_fkey"
+            columns: ["service_request_id"]
+            isOneToOne: false
+            referencedRelation: "service_requests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       service_requests: {
         Row: {
+          assigned_to_profile_id: string | null
           budget_notes: string | null
+          completed_at: string | null
           created_at: string
           description: string | null
           id: string
@@ -346,7 +444,9 @@ export type Database = {
           urgency: Database["public"]["Enums"]["urgency_level"]
         }
         Insert: {
+          assigned_to_profile_id?: string | null
           budget_notes?: string | null
+          completed_at?: string | null
           created_at?: string
           description?: string | null
           id?: string
@@ -362,7 +462,9 @@ export type Database = {
           urgency?: Database["public"]["Enums"]["urgency_level"]
         }
         Update: {
+          assigned_to_profile_id?: string | null
           budget_notes?: string | null
+          completed_at?: string | null
           created_at?: string
           description?: string | null
           id?: string
@@ -378,6 +480,13 @@ export type Database = {
           urgency?: Database["public"]["Enums"]["urgency_level"]
         }
         Relationships: [
+          {
+            foreignKeyName: "service_requests_assigned_to_profile_id_fkey"
+            columns: ["assigned_to_profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "service_requests_requested_by_profile_id_fkey"
             columns: ["requested_by_profile_id"]
