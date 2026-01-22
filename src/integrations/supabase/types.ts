@@ -328,6 +328,72 @@ export type Database = {
           },
         ]
       }
+      service_requests: {
+        Row: {
+          budget_notes: string | null
+          created_at: string
+          description: string | null
+          id: string
+          preferred_date: string | null
+          preferred_time_slot: string | null
+          requested_by_profile_id: string
+          senior_id: string
+          service_type: Database["public"]["Enums"]["service_type"]
+          special_instructions: string | null
+          status: Database["public"]["Enums"]["service_request_status"]
+          title: string
+          updated_at: string
+          urgency: Database["public"]["Enums"]["urgency_level"]
+        }
+        Insert: {
+          budget_notes?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          preferred_date?: string | null
+          preferred_time_slot?: string | null
+          requested_by_profile_id: string
+          senior_id: string
+          service_type: Database["public"]["Enums"]["service_type"]
+          special_instructions?: string | null
+          status?: Database["public"]["Enums"]["service_request_status"]
+          title: string
+          updated_at?: string
+          urgency?: Database["public"]["Enums"]["urgency_level"]
+        }
+        Update: {
+          budget_notes?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          preferred_date?: string | null
+          preferred_time_slot?: string | null
+          requested_by_profile_id?: string
+          senior_id?: string
+          service_type?: Database["public"]["Enums"]["service_type"]
+          special_instructions?: string | null
+          status?: Database["public"]["Enums"]["service_request_status"]
+          title?: string
+          updated_at?: string
+          urgency?: Database["public"]["Enums"]["urgency_level"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "service_requests_requested_by_profile_id_fkey"
+            columns: ["requested_by_profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "service_requests_senior_id_fkey"
+            columns: ["senior_id"]
+            isOneToOne: false
+            referencedRelation: "seniors"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       transportation_plans: {
         Row: {
           appointment_id: string
@@ -424,6 +490,17 @@ export type Database = {
         | "primary_coordinator"
         | "working_caregiver"
         | "long_distance_caregiver"
+      service_request_status:
+        | "pending"
+        | "confirmed"
+        | "in_progress"
+        | "completed"
+        | "cancelled"
+      service_type:
+        | "gifts_care_packages"
+        | "grocery_essentials"
+        | "errands_pickups"
+        | "home_tech_setup"
       transportation_method:
         | "family_member"
         | "caregiver"
@@ -436,6 +513,7 @@ export type Database = {
         | "in_progress"
         | "completed"
         | "cancelled"
+      urgency_level: "flexible" | "this_week" | "urgent"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -569,6 +647,19 @@ export const Constants = {
         "working_caregiver",
         "long_distance_caregiver",
       ],
+      service_request_status: [
+        "pending",
+        "confirmed",
+        "in_progress",
+        "completed",
+        "cancelled",
+      ],
+      service_type: [
+        "gifts_care_packages",
+        "grocery_essentials",
+        "errands_pickups",
+        "home_tech_setup",
+      ],
       transportation_method: [
         "family_member",
         "caregiver",
@@ -583,6 +674,7 @@ export const Constants = {
         "completed",
         "cancelled",
       ],
+      urgency_level: ["flexible", "this_week", "urgent"],
     },
   },
 } as const
