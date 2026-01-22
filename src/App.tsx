@@ -8,6 +8,7 @@ import { CaregiverPreferencesProvider } from "@/contexts/CaregiverPreferencesCon
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import FamilyDashboard from "./pages/FamilyDashboard";
+import HomeServices from "./pages/HomeServices";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/dashboard" element={<FamilyDashboard />} />
+              <Route path="/services" element={<HomeServices />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
