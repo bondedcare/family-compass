@@ -1,7 +1,6 @@
-import { useState, useCallback } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useState } from 'react';
+import { Navigate, Link } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
-import { DashboardHeader } from '@/components/dashboard/DashboardHeader';
 import { ServiceRequestDialog } from '@/components/services/ServiceRequestDialog';
 import { ServiceRequestsList } from '@/components/services/ServiceRequestsList';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -17,7 +16,9 @@ import {
   Smartphone,
   Speaker,
   AlertTriangle,
-  Wrench
+  Wrench,
+  Heart,
+  LogOut
 } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -117,9 +118,28 @@ const HomeServices = () => {
     toast.success('Your request has been submitted. We\'ll coordinate with a helper soon!');
   };
 
+  const handleSignOut = () => {
+    // Import signOut from auth context if needed
+    toast.info('Sign out functionality');
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      <DashboardHeader userName="User" />
+      {/* Simple Header */}
+      <header className="bg-card border-b border-border sticky top-0 z-50">
+        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-2">
+            <Heart className="h-6 w-6 text-primary" />
+            <span className="text-xl font-display font-semibold text-foreground">Bonded Care</span>
+          </Link>
+          <Button variant="ghost" size="sm" asChild>
+            <Link to="/auth">
+              <LogOut className="h-4 w-4 mr-2" />
+              Sign Out
+            </Link>
+          </Button>
+        </div>
+      </header>
       
       <main className="container mx-auto px-4 py-8">
         {/* Page Header */}
