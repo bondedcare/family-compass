@@ -51,7 +51,7 @@ export const ContactSection = () => {
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Have a question or ready to get started? Fill out the form below 
-              or give us a call. We'd love to hear from you.
+              or reach out anytime. I'm happy to help.
             </p>
           </div>
 
@@ -190,7 +190,7 @@ export const ContactSection = () => {
                   </a>
 
                   <a
-                    href="mailto:hello@bondedcare.com"
+                    href="mailto:pauline@bonded-care.com"
                     className="flex items-start gap-4 p-6 bg-accent/50 rounded-2xl hover:bg-accent transition-colors group"
                   >
                     <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
@@ -200,7 +200,7 @@ export const ContactSection = () => {
                       <p className="font-semibold text-lg text-foreground mb-1">
                         Send an Email
                       </p>
-                      <p className="text-muted-foreground">hello@bondedcare.com</p>
+                      <p className="text-muted-foreground">pauline@bonded-care.com</p>
                     </div>
                   </a>
 
@@ -227,8 +227,8 @@ export const ContactSection = () => {
                 </h4>
                 <p className="text-muted-foreground leading-relaxed">
                   Whether you're ready to get started or just want to ask a few 
-                  questions, we're happy to chat. There's no obligation—just 
-                  friendly folks ready to help.
+                  questions, I'm happy to chat. There's no obligation—just 
+                  friendly, personal support when you need it.
                 </p>
               </div>
             </div>

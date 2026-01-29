@@ -62,11 +62,11 @@ export const Footer = () => {
                   (555) 123-4567
                 </a>
                 <a
-                  href="mailto:hello@bondedcare.com"
+                  href="mailto:pauline@bonded-care.com"
                   className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
                 >
                   <Mail className="w-5 h-5" />
-                  hello@bondedcare.com
+                  pauline@bonded-care.com
                 </a>
               </div>
             </div>
