@@ -1,139 +1,79 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Heart, MapPin, Gift, ShoppingBag, Package } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Heart, ArrowRight, CheckCircle } from "lucide-react";
 
 export const HeroSection = () => {
+  const trustPoints = [
+    "Reliable & dependable service",
+    "Caring, respectful helpers",
+    "Peace of mind for families",
+  ];
+
   return (
-    <section className="relative min-h-[80vh] flex items-center overflow-hidden">
-      {/* Organic background shapes */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 -left-20 w-72 h-72 bg-secondary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-      </div>
+    <section className="relative py-20 md:py-32 bg-gradient-to-b from-accent/50 to-background overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-20 right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 left-10 w-48 h-48 bg-primary/10 rounded-full blur-2xl" />
 
-      <div className="container relative px-4 md:px-6 py-12 md:py-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left content */}
-          <div className="space-y-8 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full">
-              <MapPin className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">
-                Serving Ottawa & Surrounding Areas
-              </span>
-            </div>
-
-            <div className="space-y-6">
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-balance">
-                Thoughtful everyday help,{" "}
-                <span className="text-primary">coordinated with care</span>
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Bonded Care helps families coordinate personalized support for
-                seniors—from groceries and errands to gifts and light household
-                help. Not a delivery app. A trusted extension of family care.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button
-                size="lg"
-                className="text-base px-8 py-6 rounded-xl shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
-                asChild
-              >
-                <Link to="/auth">
-                  Get Started
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="text-base px-8 py-6 rounded-xl border-2 hover:bg-muted"
-              >
-                Learn More
-              </Button>
-            </div>
-
-            <div className="flex items-center justify-center lg:justify-start gap-6 pt-4">
-              <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-10 h-10 rounded-full bg-sage-200 border-2 border-background flex items-center justify-center"
-                  >
-                    <Heart className="w-4 h-4 text-primary" />
-                  </div>
-                ))}
-              </div>
-              <div className="text-sm text-muted-foreground">
-                <span className="font-semibold text-foreground">200+</span>{" "}
-                families trust us
-              </div>
-            </div>
+      <div className="container px-4 md:px-6 relative">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary/10 text-primary rounded-full text-base font-medium mb-8">
+            <Heart className="w-5 h-5" />
+            <span>Everyday Help You Can Trust</span>
           </div>
 
-          {/* Right visual */}
-          <div className="relative hidden lg:block">
-            <div className="relative bg-gradient-to-br from-sage-100 to-cream-100 rounded-3xl p-8 shadow-xl">
-              {/* Decorative card stack */}
-              <div className="space-y-4">
-                <div className="bg-card rounded-2xl p-6 shadow-sm border border-border">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Gift className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-display font-semibold text-foreground mb-1">
-                        Care Package Delivered
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        "Thinking of you, Mom" — Sarah's gift arrived safely.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+          {/* Headline */}
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-8 leading-tight text-balance">
+            Reliable Everyday Help for{" "}
+            <span className="text-primary">Seniors & Families</span>
+          </h1>
 
-                <div className="bg-card rounded-2xl p-6 shadow-sm border border-border">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                      <ShoppingBag className="w-6 h-6 text-secondary" />
-                    </div>
-                    <div>
-                      <h4 className="font-display font-semibold text-foreground mb-1">
-                        Weekly Groceries
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        Thursday delivery — remembered the extra-ripe bananas.
-                      </p>
-                      <span className="inline-block mt-2 px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
-                        Recurring request
-                      </span>
-                    </div>
-                  </div>
-                </div>
+          {/* Subheadline */}
+          <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
+            Bonded Care provides friendly, dependable assistance with errands, 
+            deliveries, and everyday tasks—giving you and your loved ones 
+            peace of mind.
+          </p>
 
-                <div className="bg-card rounded-2xl p-6 shadow-sm border border-border">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-sage-100 flex items-center justify-center flex-shrink-0">
-                      <Package className="w-6 h-6 text-sage-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-display font-semibold text-foreground mb-1">
-                        Pharmacy Pickup
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        Prescriptions collected with care notes attached.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+          {/* Trust points */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-12">
+            {trustPoints.map((point) => (
+              <div
+                key={point}
+                className="flex items-center gap-2 text-foreground"
+              >
+                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                <span className="text-base md:text-lg">{point}</span>
               </div>
-
-              {/* Floating accent */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-secondary/20 rounded-full blur-xl" />
-            </div>
+            ))}
           </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="rounded-full text-lg px-10 py-7 shadow-lg hover:shadow-xl transition-shadow"
+              asChild
+            >
+              <a href="#contact">
+                Request Help Today
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="rounded-full text-lg px-10 py-7 border-2"
+              asChild
+            >
+              <a href="#services">Learn About Our Services</a>
+            </Button>
+          </div>
+
+          {/* Reassurance text */}
+          <p className="mt-10 text-muted-foreground text-base">
+            No accounts needed. No commitments. Just friendly, helpful service.
+          </p>
         </div>
       </div>
     </section>

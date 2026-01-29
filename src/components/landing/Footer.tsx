@@ -1,115 +1,83 @@
-import { Heart } from "lucide-react";
+import { Heart, Phone, Mail } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = {
-    services: [
-      { label: "Gifts & Care Packages", href: "#services" },
-      { label: "Grocery Shopping", href: "#services" },
-      { label: "Errands & Pickups", href: "#services" },
-      { label: "Household Help", href: "#services" },
-    ],
-    company: [
-      { label: "About Us", href: "#about" },
-      { label: "Contact", href: "#contact" },
-      { label: "Careers", href: "#" },
-      { label: "Blog", href: "#" },
-    ],
-    legal: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "Accessibility", href: "#" },
-    ],
-  };
+  const quickLinks = [
+    { label: "Services", href: "#services" },
+    { label: "About Us", href: "#about" },
+    { label: "Contact", href: "#contact" },
+  ];
 
   return (
-    <footer className="bg-foreground text-background/90 py-16">
+    <footer className="bg-foreground text-background py-16">
       <div className="container px-4 md:px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <a href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <Heart className="w-5 h-5 text-primary-foreground" />
+        <div className="max-w-6xl mx-auto">
+          <div className="grid gap-12 md:grid-cols-3">
+            {/* Brand */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                  <Heart className="w-6 h-6 text-primary-foreground" />
+                </div>
+                <span className="font-display text-2xl font-semibold">
+                  Bonded Care
+                </span>
               </div>
-              <span className="font-display text-xl font-bold text-background">
-                Bonded Care
-              </span>
-            </a>
-            <p className="text-background/70 leading-relaxed max-w-sm mb-6">
-              Thoughtful everyday support for Ottawa's seniors. We help families
-              coordinate personalized help—from groceries to gifts—with dignity
-              and care.
+              <p className="text-background/70 leading-relaxed mb-6">
+                Reliable, friendly help for everyday tasks. Giving seniors 
+                independence and families peace of mind.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="font-display text-lg font-semibold mb-6">
+                Quick Links
+              </h4>
+              <nav className="flex flex-col gap-3">
+                {quickLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="text-background/70 hover:text-background transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="font-display text-lg font-semibold mb-6">
+                Contact Us
+              </h4>
+              <div className="space-y-4">
+                <a
+                  href="tel:+15551234567"
+                  className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
+                >
+                  <Phone className="w-5 h-5" />
+                  (555) 123-4567
+                </a>
+                <a
+                  href="mailto:hello@bondedcare.com"
+                  className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
+                >
+                  <Mail className="w-5 h-5" />
+                  hello@bondedcare.com
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom */}
+          <div className="mt-12 pt-8 border-t border-background/20 text-center">
+            <p className="text-background/60">
+              © {currentYear} Bonded Care. All rights reserved.
             </p>
-            <p className="text-sm text-background/50">
-              A trusted extension of family care
-            </p>
           </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="font-display font-semibold text-background mb-4">
-              Services
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-background/70 hover:text-background transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="font-display font-semibold text-background mb-4">
-              Company
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-background/70 hover:text-background transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h4 className="font-display font-semibold text-background mb-4">
-              Legal
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-background/70 hover:text-background transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <hr className="border-background/10 mb-8" />
-
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-background/50">
-          <p>© {currentYear} Bonded Care. All rights reserved.</p>
-          <p>Made with ❤️ in Ottawa, Canada</p>
         </div>
       </div>
     </footer>

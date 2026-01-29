@@ -1,4 +1,11 @@
-import { Gift, ShoppingCart, Package, Wifi, Heart, Users } from "lucide-react";
+import { 
+  Package, 
+  ShoppingCart, 
+  Gift, 
+  Home, 
+  Wrench, 
+  Car 
+} from "lucide-react";
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -8,14 +15,16 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
   return (
-    <div className="group bg-card rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-border hover:border-primary/20">
-      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+    <div className="group bg-card rounded-2xl p-8 md:p-10 shadow-sm hover:shadow-md transition-all duration-300 border border-border hover:border-primary/30">
+      <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
         <div className="text-primary">{icon}</div>
       </div>
-      <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+      <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-4">
         {title}
       </h3>
-      <p className="text-muted-foreground leading-relaxed">{description}</p>
+      <p className="text-muted-foreground text-lg leading-relaxed">
+        {description}
+      </p>
     </div>
   );
 };
@@ -23,61 +32,60 @@ const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
 export const ServicesSection = () => {
   const services = [
     {
-      icon: <Gift className="w-6 h-6" />,
-      title: "Gifts & Care Packages",
+      icon: <Package className="w-8 h-8" />,
+      title: "Courier & Deliveries",
       description:
-        "Send thoughtful gifts and care packages with personal notes—delivered with warmth, not just dropped off.",
+        "Need something picked up or dropped off? We handle packages, documents, and more with care and reliability.",
     },
     {
-      icon: <ShoppingCart className="w-6 h-6" />,
-      title: "Grocery & Essentials",
+      icon: <ShoppingCart className="w-8 h-8" />,
+      title: "Grocery Runs & Errands",
       description:
-        "Weekly shopping or one-time runs, always with attention to preferences, brands, and special requests.",
+        "From weekly groceries to pharmacy pickups, we take care of the running around so you don't have to.",
     },
     {
-      icon: <Package className="w-6 h-6" />,
-      title: "Errands & Pickups",
+      icon: <Gift className="w-8 h-8" />,
+      title: "Gift Pickup & Delivery",
       description:
-        "Pharmacy runs, returns, drop-offs—small tasks handled with care so nothing falls through the cracks.",
+        "Sending a gift to a loved one? We'll pick it up and deliver it with a personal touch.",
     },
     {
-      icon: <Wifi className="w-6 h-6" />,
-      title: "Home Tech Setup",
+      icon: <Home className="w-8 h-8" />,
+      title: "General Home Help",
       description:
-        "Setting up voice assistants, emergency systems, and smart devices—plus gentle troubleshooting when things don't work.",
+        "Light organizing, tidying up, or preparing for visitors—we help keep things comfortable and manageable.",
     },
     {
-      icon: <Heart className="w-6 h-6" />,
-      title: "Personal Context",
+      icon: <Wrench className="w-8 h-8" />,
+      title: "Odd Jobs & Small Tasks",
       description:
-        "Every request includes preferences, routines, and comfort notes—because care is about knowing the person.",
+        "Those little things that pile up—changing batteries, sorting mail, small fixes—we're happy to help.",
     },
     {
-      icon: <Users className="w-6 h-6" />,
-      title: "Family Coordination",
+      icon: <Car className="w-8 h-8" />,
+      title: "Car Detailing & Care",
       description:
-        "A shared space for families to plan, track, and coordinate support—so caregiving feels less scattered.",
+        "Basic vehicle cleaning and care to keep your car looking good and ready when you need it.",
     },
   ];
 
   return (
-    <section id="services" className="py-12 md:py-16 bg-background">
+    <section id="services" className="py-20 md:py-28 bg-background">
       <div className="container px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-5 py-2 bg-primary/10 text-primary rounded-full text-base font-medium mb-6">
             How We Help
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            Everyday support, thoughtfully done
+            Practical Help for Everyday Life
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Not a delivery app. Not a gig marketplace. Just personalized,
-            family-coordinated help that treats seniors with the dignity and
-            care they deserve.
+          <p className="text-xl text-muted-foreground leading-relaxed">
+            We're here for the errands, tasks, and little things that make daily life 
+            easier—handled with care and a friendly smile.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <div
               key={service.title}
@@ -87,6 +95,14 @@ export const ServicesSection = () => {
               <ServiceCard {...service} />
             </div>
           ))}
+        </div>
+
+        {/* Additional reassurance */}
+        <div className="mt-16 text-center">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <strong className="text-foreground">Not sure if we can help?</strong> Just ask! 
+            We're always happy to chat about what you need—no obligation, no pressure.
+          </p>
         </div>
       </div>
     </section>

@@ -1,139 +1,240 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
-import { useState } from "react";
-import { toast } from "@/hooks/use-toast";
+import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import { toast } from "sonner";
+
 export const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you within 24 hours."
-    });
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+    setIsSubmitted(true);
+    toast.success("Thank you! We'll be in touch soon.");
+    setFormData({ name: "", phone: "", email: "", message: "" });
   };
-  const contactInfo = [{
-    icon: <Phone className="w-5 h-5" />,
-    label: "Phone",
-    value: "(613) 555-CARE",
-    href: "tel:+16135552273"
-  }, {
-    icon: <Mail className="w-5 h-5" />,
-    label: "Email",
-    value: "hello@bondedcare.ca",
-    href: "mailto:hello@bondedcare.ca"
-  }, {
-    icon: <MapPin className="w-5 h-5" />,
-    label: "Location",
-    value: "Ottawa, ON",
-    href: null
-  }, {
-    icon: <Clock className="w-5 h-5" />,
-    label: "Hours",
-    value: "24/7 Support Available",
-    href: null
-  }];
-  return <section id="contact" className="py-12 md:py-16 bg-background">
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  return (
+    <section id="contact" className="py-20 md:py-28 bg-background">
       <div className="container px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-            Get in Touch
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            Let's talk about care
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Whether you have questions, want to learn more, or are ready to get
-            started, we're here to help. Reach out anytime.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 max-w-6xl mx-auto">
-          {/* Contact info */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8">
-              <h3 className="font-display text-xl font-semibold text-foreground mb-6">
-                Contact Information
-              </h3>
-              <div className="space-y-5">
-                {contactInfo.map(item => <div key={item.label} className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <span className="text-primary">{item.icon}</span>
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground mb-0.5">
-                        {item.label}
-                      </p>
-                      {item.href ? <a href={item.href} className="font-medium text-foreground hover:text-primary transition-colors">
-                          {item.value}
-                        </a> : <p className="font-medium text-foreground">
-                          {item.value}
-                        </p>}
-                    </div>
-                  </div>)}
-              </div>
-            </div>
-
-            <div className="bg-secondary/10 rounded-2xl p-6">
-              <p className="text-secondary font-medium mb-2">
-                Need immediate assistance?
-              </p>
-              <p className="text-sm text-muted-foreground">Our care team is available for urgent inquiries. Don't hesitate to call anytime.</p>
-            </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block px-5 py-2 bg-primary/10 text-primary rounded-full text-base font-medium mb-6">
+              Get in Touch
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
+              We're Here to Help
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Have a question or ready to get started? Fill out the form below 
+              or give us a call. We'd love to hear from you.
+            </p>
           </div>
 
-          {/* Contact form */}
-          <div className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 shadow-sm border border-border">
-              <div className="grid sm:grid-cols-2 gap-6 mb-6">
-                <div className="space-y-2">
-                  <Label htmlFor="firstName">First Name</Label>
-                  <Input id="firstName" name="firstName" placeholder="Your first name" required className="rounded-xl h-12" />
+          <div className="grid gap-12 lg:grid-cols-2">
+            {/* Contact Form */}
+            <div className="bg-card rounded-3xl p-8 md:p-10 shadow-sm border border-border">
+              {isSubmitted ? (
+                <div className="text-center py-12">
+                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle className="w-10 h-10 text-primary" />
+                  </div>
+                  <h3 className="font-display text-2xl font-semibold text-foreground mb-4">
+                    Thank You!
+                  </h3>
+                  <p className="text-muted-foreground text-lg mb-6">
+                    We've received your message and will get back to you soon.
+                  </p>
+                  <Button
+                    variant="outline"
+                    onClick={() => setIsSubmitted(false)}
+                    className="rounded-full"
+                  >
+                    Send Another Message
+                  </Button>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="lastName">Last Name</Label>
-                  <Input id="lastName" name="lastName" placeholder="Your last name" required className="rounded-xl h-12" />
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="text-base font-medium">
+                      Your Name
+                    </Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      type="text"
+                      placeholder="Jane Smith"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="h-14 text-lg rounded-xl"
+                    />
+                  </div>
+
+                  <div className="grid gap-6 sm:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label htmlFor="phone" className="text-base font-medium">
+                        Phone Number
+                      </Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="(555) 123-4567"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="h-14 text-lg rounded-xl"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="text-base font-medium">
+                        Email Address
+                      </Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="jane@example.com"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="h-14 text-lg rounded-xl"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message" className="text-base font-medium">
+                      How Can We Help?
+                    </Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Tell us a bit about what you need..."
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      className="min-h-[150px] text-lg rounded-xl resize-none"
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    size="lg"
+                    disabled={isSubmitting}
+                    className="w-full rounded-full text-lg py-7"
+                  >
+                    {isSubmitting ? (
+                      "Sending..."
+                    ) : (
+                      <>
+                        Send Message
+                        <Send className="w-5 h-5 ml-2" />
+                      </>
+                    )}
+                  </Button>
+
+                  <p className="text-sm text-muted-foreground text-center">
+                    We typically respond within 24 hours.
+                  </p>
+                </form>
+              )}
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-display text-2xl font-semibold text-foreground mb-6">
+                  Other Ways to Reach Us
+                </h3>
+                <div className="space-y-6">
+                  <a
+                    href="tel:+15551234567"
+                    className="flex items-start gap-4 p-6 bg-accent/50 rounded-2xl hover:bg-accent transition-colors group"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                      <Phone className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-lg text-foreground mb-1">
+                        Give Us a Call
+                      </p>
+                      <p className="text-muted-foreground">(555) 123-4567</p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Mon–Fri, 8am–6pm
+                      </p>
+                    </div>
+                  </a>
+
+                  <a
+                    href="mailto:hello@bondedcare.com"
+                    className="flex items-start gap-4 p-6 bg-accent/50 rounded-2xl hover:bg-accent transition-colors group"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                      <Mail className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-lg text-foreground mb-1">
+                        Send an Email
+                      </p>
+                      <p className="text-muted-foreground">hello@bondedcare.com</p>
+                    </div>
+                  </a>
+
+                  <div className="flex items-start gap-4 p-6 bg-accent/50 rounded-2xl">
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-lg text-foreground mb-1">
+                        Service Area
+                      </p>
+                      <p className="text-muted-foreground">
+                        Proudly serving the greater metro area
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-6 mb-6">
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" name="email" type="email" placeholder="you@example.com" required className="rounded-xl h-12" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone (optional)</Label>
-                  <Input id="phone" name="phone" type="tel" placeholder="(613) 555-0000" className="rounded-xl h-12" />
-                </div>
+              {/* Trust message */}
+              <div className="bg-primary/5 rounded-2xl p-8 border border-primary/10">
+                <h4 className="font-display text-xl font-semibold text-foreground mb-3">
+                  No Pressure, Just Help
+                </h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Whether you're ready to get started or just want to ask a few 
+                  questions, we're happy to chat. There's no obligation—just 
+                  friendly folks ready to help.
+                </p>
               </div>
-
-              <div className="space-y-2 mb-6">
-                <Label htmlFor="subject">How can we help?</Label>
-                <Input id="subject" name="subject" placeholder="I'd like to learn about your services..." required className="rounded-xl h-12" />
-              </div>
-
-              <div className="space-y-2 mb-8">
-                <Label htmlFor="message">Message</Label>
-                <Textarea id="message" name="message" placeholder="Tell us more about what you're looking for..." rows={5} required className="rounded-xl resize-none" />
-              </div>
-
-              <Button type="submit" size="lg" className="w-full rounded-xl h-12 text-base" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : <>
-                    Send Message
-                    <Send className="ml-2 w-4 h-4" />
-                  </>}
-              </Button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
