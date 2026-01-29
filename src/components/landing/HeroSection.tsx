@@ -46,9 +46,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Reassurance text */}
-          <p className="mt-10 text-muted-foreground text-base">
-            No accounts needed. No commitments. Just friendly, helpful service.
-          </p>
+          <p className="mt-10 text-muted-foreground text-base">No accounts. No commitments. Just friendly, helpful service.</p>
         </div>
       </div>
     </section>;
