@@ -25,27 +25,27 @@ export const ServicesSection = () => {
   const services = [{
     icon: <Package className="w-8 h-8" />,
     title: "Courier & Deliveries",
-    description: "Need something picked up or dropped off? We handle packages, documents, and more with care and reliability."
+    description: "Packages, documents, and more—picked up and dropped off with care and reliability."
   }, {
     icon: <ShoppingCart className="w-8 h-8" />,
     title: "Grocery Runs & Errands",
-    description: "From weekly groceries to pharmacy pickups, we take care of the running around so you don't have to."
+    description: "From weekly groceries to pharmacy pickups, errands are handled so you don't have to."
   }, {
     icon: <Gift className="w-8 h-8" />,
     title: "Gift Pickup & Delivery",
-    description: "Sending a gift to a loved one? We'll pick it up and deliver it with a personal touch."
+    description: "Gifts for loved ones picked up and delivered with a personal touch."
   }, {
     icon: <Home className="w-8 h-8" />,
     title: "General Home Help",
-    description: "Light organizing, tidying up, or preparing for visitors—we help keep things comfortable and manageable."
+    description: "Light organizing, tidying up, or preparing for visitors—support to keep things comfortable and manageable."
   }, {
     icon: <Wrench className="w-8 h-8" />,
     title: "Odd Jobs & Animal Care",
-    description: "From small fixes around the house to pet care, dog walking, and feeding assistance—we're happy to lend a hand."
+    description: "From small fixes around the house to pet care, dog walking, and feeding assistance—help is always available."
   }, {
     icon: <Car className="w-8 h-8" />,
     title: "Car Detailing & Care",
-    description: "Basic vehicle cleaning and care to keep your car looking good and ready when you need it."
+    description: "Basic vehicle cleaning and care to keep your car looking good and ready when needed."
   }];
   return <section id="services" className="py-20 md:py-28 bg-background">
       <div className="container px-4 md:px-6">

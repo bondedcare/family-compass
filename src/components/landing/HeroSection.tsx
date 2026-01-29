@@ -41,7 +41,7 @@ export const HeroSection = () => {
               </a>
             </Button>
             <Button variant="outline" size="lg" className="rounded-full text-lg px-10 py-7 border-2" asChild>
-              <a href="#services">Our Services</a>
+              <a href="#services">View Services</a>
             </Button>
           </div>
 

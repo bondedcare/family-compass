@@ -25,20 +25,20 @@ export const FounderSection = () => {
               {/* Introduction */}
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2">Hello! I'm Pauline Bond...</h3>
+                  <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2">Hello! This is Pauline Bond...</h3>
                   
                 </div>
 
                 <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
-                  <p>For over 25 years, I've built a solid career around one thing: making sure nothing falls through the cracks. Whether coordinating complex schedules, managing logistics, or simply ensuring every detail is handled with care, I've always believed that reliability and attention to detail make all the difference.</p>
+                  <p>With over 25 years of experience, Bonded Care was built around one thing: making sure nothing falls through the cracks. Whether coordinating complex schedules, managing logistics, or simply ensuring every detail is handled with care, reliability and attention to detail make all the difference.</p>
 
-                  <p>I started Bonded Care because I saw how much families—especially those caring for aging loved ones like myself, needed someone they could truly count on. Someone who would show up when promised, handle tasks with discretion and a smile, and treat their home and their loved ones with genuine respect.</p>
+                  <p>Bonded Care was created because families—especially those caring for aging loved ones—need someone they can truly count on. Someone who shows up when promised, handles tasks with discretion and a smile, and treats their home and loved ones with genuine respect.</p>
 
                   <p>
-                    I understand how hard it can be to ask for help, and how important it 
-                    is to feel comfortable with the person you're trusting. That's why I 
-                    approach every task—big or small—with the same care and follow-through 
-                    I'd want for my own family.
+                    Asking for help can be hard, and feeling comfortable with the person 
+                    you're trusting matters. That's why every task—big or small—is 
+                    approached with the same care and follow-through you'd want for 
+                    your own family.
                   </p>
 
                   <p className="text-foreground font-medium">

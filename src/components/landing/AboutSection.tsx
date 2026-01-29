@@ -3,19 +3,19 @@ export const AboutSection = () => {
   const values = [{
     icon: <Heart className="w-7 h-7" />,
     title: "Kindness First",
-    description: "We treat everyone with warmth, respect, and genuine care—like we would our own family."
+    description: "Everyone is treated with warmth, respect, and genuine care—like family."
   }, {
     icon: <Shield className="w-7 h-7" />,
     title: "Trustworthy & Reliable",
-    description: "When we say we'll be there, we mean it. You can count on us to follow through."
+    description: "When Bonded Care says it will be there, it will be. You can count on follow-through."
   }, {
     icon: <Clock className="w-7 h-7" />,
     title: "Flexible & Understanding",
-    description: "Life happens. We work around your schedule and adapt to your needs."
+    description: "Life happens. Schedules are flexible and services adapt to your needs."
   }, {
     icon: <Users className="w-7 h-7" />,
     title: "Here for Families",
-    description: "Whether you're nearby or far away, we help families care for the people they love."
+    description: "Whether you're nearby or far away, Bonded Care helps families care for the people they love."
   }];
   return (
     <section id="about" className="py-20 md:py-28 bg-muted/30">

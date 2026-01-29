@@ -5,7 +5,7 @@ export const Footer = () => {
 
   const quickLinks = [
     { label: "Services", href: "#services" },
-    { label: "About Us", href: "#about" },
+    { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -51,7 +51,7 @@ export const Footer = () => {
             {/* Contact */}
             <div>
               <h4 className="font-display text-lg font-semibold mb-6">
-                Contact Us
+                Contact
               </h4>
               <div className="space-y-4">
                 <a
