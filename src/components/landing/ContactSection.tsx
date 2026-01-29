@@ -116,7 +116,7 @@ export const ContactSection = () => {
                       <Phone className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <p className="font-semibold text-lg text-foreground mb-1">Call!</p>
+                      <p className="font-semibold text-lg text-foreground mb-1">Call:</p>
                       <p className="text-muted-foreground">(555) 123-4567</p>
                       <p className="text-sm text-muted-foreground mt-1">7 days a week</p>
                     </div>
