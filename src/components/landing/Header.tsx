@@ -1,72 +1,94 @@
 import { Button } from "@/components/ui/button";
-import { Heart, Menu, X } from "lucide-react";
+import { Heart, Menu, X, Phone } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navLinks = [{
-    label: "Services",
-    href: "#services"
-  }, {
-    label: "About",
-    href: "#about"
-  }, {
-    label: "Contact",
-    href: "#contact"
-  }];
-  return <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+
+  const navLinks = [
+    { label: "Services", href: "#services" },
+    { label: "About Us", href: "#about" },
+    { label: "Contact", href: "#contact" },
+  ];
+
+  return (
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container px-4 md:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-              <Heart className="w-5 h-5 text-primary-foreground" />
+          <a href="#" className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+              <Heart className="w-6 h-6 text-primary-foreground" />
             </div>
-            <span className="font-bold text-[#162c5a] font-mono text-4xl">
+            <span className="font-display text-2xl md:text-3xl font-semibold text-foreground">
               Bonded Care
             </span>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map(link => <a key={link.label} href={link.href} className="text-muted-foreground hover:text-foreground transition-colors font-medium">
+          <nav className="hidden md:flex items-center gap-10">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-lg text-muted-foreground hover:text-foreground transition-colors font-medium"
+              >
                 {link.label}
-              </a>)}
+              </a>
+            ))}
           </nav>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" className="rounded-xl" asChild>
-              <Link to="/auth">Sign In</Link>
-            </Button>
-            <Button className="rounded-xl" asChild>
-              <Link to="/auth">Get Started</Link>
+            <Button size="lg" className="rounded-full text-lg px-8" asChild>
+              <a href="#contact">
+                <Phone className="w-5 h-5 mr-2" />
+                Get in Touch
+              </a>
             </Button>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button className="md:hidden p-2 -mr-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
-            {isMenuOpen ? <X className="w-6 h-6 text-foreground" /> : <Menu className="w-6 h-6 text-foreground" />}
+          <button
+            className="md:hidden p-3 -mr-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? (
+              <X className="w-7 h-7 text-foreground" />
+            ) : (
+              <Menu className="w-7 h-7 text-foreground" />
+            )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && <div className="md:hidden py-4 border-t border-border">
+        {isMenuOpen && (
+          <div className="md:hidden py-6 border-t border-border">
             <nav className="flex flex-col gap-2">
-              {navLinks.map(link => <a key={link.label} href={link.href} className="px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-xl transition-colors font-medium" onClick={() => setIsMenuOpen(false)}>
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="px-4 py-4 text-lg text-muted-foreground hover:text-foreground hover:bg-accent rounded-xl transition-colors font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   {link.label}
-                </a>)}
-              <hr className="my-2 border-border" />
-              <div className="flex flex-col gap-2 px-4">
-                <Button variant="ghost" className="w-full rounded-xl justify-start" asChild>
-                  <Link to="/auth">Sign In</Link>
-                </Button>
-                <Button className="w-full rounded-xl" asChild>
-                  <Link to="/auth">Get Started</Link>
+                </a>
+              ))}
+              <hr className="my-4 border-border" />
+              <div className="px-4">
+                <Button size="lg" className="w-full rounded-full text-lg" asChild>
+                  <a href="#contact">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Get in Touch
+                  </a>
                 </Button>
               </div>
             </nav>
-          </div>}
+          </div>
+        )}
       </div>
-    </header>;
+    </header>
+  );
 };

@@ -1,126 +1,89 @@
-import { Heart, Users, MapPin, Star } from "lucide-react";
+import { Heart, Shield, Clock, Users } from "lucide-react";
 
 export const AboutSection = () => {
-  const stats = [
+  const values = [
     {
-      icon: <Users className="w-5 h-5" />,
-      value: "200+",
-      label: "Families Served",
+      icon: <Heart className="w-7 h-7" />,
+      title: "Kindness First",
+      description:
+        "We treat everyone with warmth, respect, and genuine care—like we would our own family.",
     },
     {
-      icon: <MapPin className="w-5 h-5" />,
-      value: "Ottawa",
-      label: "& Surrounding Areas",
+      icon: <Shield className="w-7 h-7" />,
+      title: "Trustworthy & Reliable",
+      description:
+        "When we say we'll be there, we mean it. You can count on us to follow through.",
     },
     {
-      icon: <Star className="w-5 h-5" />,
-      value: "4.9",
-      label: "Average Rating",
+      icon: <Clock className="w-7 h-7" />,
+      title: "Flexible & Understanding",
+      description:
+        "Life happens. We work around your schedule and adapt to your needs.",
     },
     {
-      icon: <Heart className="w-5 h-5" />,
-      value: "7 Days",
-      label: "A Week Support",
+      icon: <Users className="w-7 h-7" />,
+      title: "Here for Families",
+      description:
+        "Whether you're nearby or far away, we help families care for the people they love.",
     },
   ];
 
   return (
-    <section id="about" className="py-12 md:py-16 bg-muted/30">
+    <section id="about" className="py-20 md:py-28 bg-accent/30">
       <div className="container px-4 md:px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Visual side */}
-          <div className="relative order-2 lg:order-1">
-            <div className="relative">
-              {/* Main visual card */}
-              <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-8 lg:p-12">
-                <div className="aspect-square rounded-2xl bg-card shadow-lg flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Heart className="w-12 h-12 text-primary" />
-                    </div>
-                    <p className="font-display text-2xl font-semibold text-foreground mb-2">
-                      Bonded Care
-                    </p>
-                    <p className="text-muted-foreground text-sm">
-                      A trusted extension of family
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating stat cards */}
-              <div className="absolute -top-4 -right-4 bg-card rounded-xl shadow-lg p-4 border border-border hidden md:block">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center">
-                    <Star className="w-5 h-5 text-secondary" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground">Trusted</p>
-                    <p className="text-xs text-muted-foreground">By families</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-4 -left-4 bg-card rounded-xl shadow-lg p-4 border border-border hidden md:block">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Heart className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground">Caring</p>
-                    <p className="text-xs text-muted-foreground">Like family</p>
-                  </div>
-                </div>
-              </div>
+        <div className="max-w-6xl mx-auto">
+          {/* Intro */}
+          <div className="text-center mb-16">
+            <span className="inline-block px-5 py-2 bg-primary/10 text-primary rounded-full text-base font-medium mb-6">
+              About Bonded Care
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 text-balance">
+              A Helping Hand You Can Rely On
+            </h2>
+            <div className="max-w-3xl mx-auto space-y-6">
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Bonded Care was created with a simple idea: everyone deserves a little 
+                help sometimes. We're here for seniors who want to stay independent, 
+                and for families who want peace of mind knowing their loved ones are 
+                looked after.
+              </p>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                We're not a big corporation or a faceless app. We're friendly, 
+                trustworthy people who genuinely care about making your day a 
+                little easier.
+              </p>
             </div>
           </div>
 
-          {/* Content side */}
-          <div className="order-1 lg:order-2 space-y-8">
-            <div>
-              <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
-                About Us
-              </span>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-                Help that feels like family
-              </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  Bonded Care was born from a simple belief: seniors deserve
-                  everyday support that's thoughtful, dignified, and personal—
-                  not rushed deliveries or anonymous services.
-                </p>
-                <p>
-                  We help families coordinate the small things that make a big
-                  difference: a favorite treat from the bakery, prescriptions
-                  picked up with care notes, groceries stocked just the way they
-                  like.
-                </p>
-                <p>
-                  Based in Ottawa, we understand our community. Every helper
-                  knows the context behind each request—preferences, routines,
-                  and what makes your loved one feel seen and cared for.
+          {/* Values */}
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {values.map((value) => (
+              <div
+                key={value.title}
+                className="text-center p-6"
+              >
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5 text-primary">
+                  {value.icon}
+                </div>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+                  {value.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {value.description}
                 </p>
               </div>
-            </div>
+            ))}
+          </div>
 
-            {/* Stats grid */}
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="bg-card rounded-xl p-5 border border-border"
-                >
-                  <div className="flex items-center gap-2 text-primary mb-2">
-                    {stat.icon}
-                    <span className="font-display text-2xl font-bold text-foreground">
-                      {stat.value}
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
-                </div>
-              ))}
-            </div>
+          {/* Quote/Testimonial style message */}
+          <div className="mt-20 bg-card rounded-3xl p-10 md:p-14 text-center shadow-sm border border-border">
+            <blockquote className="font-display text-2xl md:text-3xl text-foreground italic mb-6 leading-relaxed">
+              "We believe in old-fashioned values: showing up when we say we will, 
+              doing the job right, and treating people the way we'd want to be treated."
+            </blockquote>
+            <p className="text-muted-foreground text-lg">
+              — The Bonded Care Team
+            </p>
           </div>
         </div>
       </div>
