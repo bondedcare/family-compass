@@ -1,15 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Heart, ArrowRight, CheckCircle } from "lucide-react";
-
 export const HeroSection = () => {
-  const trustPoints = [
-    "Reliable & dependable service",
-    "Caring, respectful helpers",
-    "Peace of mind for families",
-  ];
-
-  return (
-    <section className="relative py-20 md:py-32 bg-gradient-to-b from-accent/50 to-background overflow-hidden">
+  const trustPoints = ["Reliable & dependable service", "Caring, respectful helpers", "Peace of mind for families"];
+  return <section className="relative py-20 md:py-32 bg-gradient-to-b from-accent/50 to-background overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-20 right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-10 left-10 w-48 h-48 bg-primary/10 rounded-full blur-2xl" />
@@ -37,36 +30,22 @@ export const HeroSection = () => {
 
           {/* Trust points */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-12">
-            {trustPoints.map((point) => (
-              <div
-                key={point}
-                className="flex items-center gap-2 text-foreground"
-              >
+            {trustPoints.map(point => <div key={point} className="flex items-center gap-2 text-foreground">
                 <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                 <span className="text-base md:text-lg">{point}</span>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="rounded-full text-lg px-10 py-7 shadow-lg hover:shadow-xl transition-shadow"
-              asChild
-            >
+            <Button size="lg" className="rounded-full text-lg px-10 py-7 shadow-lg hover:shadow-xl transition-shadow" asChild>
               <a href="#contact">
                 Request Help Today
                 <ArrowRight className="w-5 h-5 ml-2" />
               </a>
             </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="rounded-full text-lg px-10 py-7 border-2"
-              asChild
-            >
-              <a href="#services">Learn About Our Services</a>
+            <Button variant="outline" size="lg" className="rounded-full text-lg px-10 py-7 border-2" asChild>
+              <a href="#services">Our Services</a>
             </Button>
           </div>
 
@@ -76,6 +55,5 @@ export const HeroSection = () => {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
