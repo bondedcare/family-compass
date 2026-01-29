@@ -17,30 +17,5 @@ export const AboutSection = () => {
     title: "Here for Families",
     description: "Whether you're nearby or far away, we help families care for the people they love."
   }];
-  return <section id="about" className="py-20 md:py-28 bg-accent/30">
-      <div className="container px-4 md:px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Intro */}
-          
-
-          {/* Values */}
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {values.map(value => <div key={value.title} className="text-center p-6">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5 text-primary">
-                  {value.icon}
-                </div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {value.description}
-                </p>
-              </div>)}
-          </div>
-
-          {/* Quote/Testimonial style message */}
-          
-        </div>
-      </div>
-    </section>;
+  return;
 };
