@@ -57,17 +57,7 @@ export const FounderSection = () => {
                 </div>
 
                 {/* Trust indicators */}
-                <div className="pt-4 flex flex-wrap gap-4">
-                  <div className="flex items-center gap-2 text-foreground">
-                    <div className="w-2 h-2 rounded-full bg-primary" />
-                    <span>Mature and reliable</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-foreground">
-                    <div className="w-2 h-2 rounded-full bg-primary" />
-                    <span>Background checked</span>
-                  </div>
-                  
-                </div>
+                
               </div>
             </div>
           </div>
