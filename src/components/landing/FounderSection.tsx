@@ -1,15 +1,11 @@
 import founderPortrait from "@/assets/founder-portrait.jpg";
-
 export const FounderSection = () => {
-  return (
-    <section id="founder" className="py-20 md:py-28 bg-background">
+  return <section id="founder" className="py-20 md:py-28 bg-background">
       <div className="container px-4 md:px-6">
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-12">
-            <span className="inline-block px-5 py-2 bg-primary/10 text-primary rounded-full text-base font-medium mb-6">
-              Meet the Founder
-            </span>
+            <span className="inline-block px-5 py-2 bg-primary/10 text-primary rounded-full text-base font-medium mb-6">Meet the Help!</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-balance">
               A Personal Touch Behind Every Task
             </h2>
@@ -22,20 +18,14 @@ export const FounderSection = () => {
               <div className="mx-auto md:mx-0">
                 <div className="relative">
                   <div className="absolute inset-0 bg-primary/20 rounded-2xl transform rotate-3" />
-                  <img
-                    src={founderPortrait}
-                    alt="Founder of Bonded Care"
-                    className="relative w-64 md:w-full max-w-[320px] aspect-[3/4] object-cover rounded-2xl shadow-md"
-                  />
+                  <img src={founderPortrait} alt="Founder of Bonded Care" className="relative w-64 md:w-full max-w-[320px] aspect-[3/4] object-cover rounded-2xl shadow-md" />
                 </div>
               </div>
 
               {/* Introduction */}
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2">
-                    Hello, I'm Pauline
-                  </h3>
+                  <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2">Hello! I'm Pauline Bond...</h3>
                   <p className="text-primary font-medium text-lg">
                     Founder of Bonded Care
                   </p>
@@ -50,12 +40,7 @@ export const FounderSection = () => {
                     the difference.
                   </p>
 
-                  <p>
-                    I started Bonded Care because I saw how much families—especially those 
-                    caring for aging loved ones—needed someone they could truly count on. 
-                    Someone who would show up when promised, handle tasks with discretion, 
-                    and treat their home and their loved ones with genuine respect.
-                  </p>
+                  <p>I started Bonded Care because I saw how much families—especially those caring for aging loved ones, including my own, needed someone they could truly count on. Someone who would show up when promised, handle tasks with discretion, and treat their home and their loved ones with genuine respect.</p>
 
                   <p>
                     I understand how hard it can be to ask for help, and how important it 
@@ -91,6 +76,5 @@ export const FounderSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
