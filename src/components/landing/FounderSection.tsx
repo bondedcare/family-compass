@@ -26,9 +26,7 @@ export const FounderSection = () => {
               <div className="space-y-6">
                 <div>
                   <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2">Hello! I'm Pauline Bond...</h3>
-                  <p className="text-primary font-medium text-lg">
-                    Founder of Bonded Care
-                  </p>
+                  
                 </div>
 
                 <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
