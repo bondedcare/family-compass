@@ -39,15 +39,7 @@ export const AboutSection = () => {
           </div>
 
           {/* Quote/Testimonial style message */}
-          <div className="mt-20 bg-card rounded-3xl p-10 md:p-14 text-center shadow-sm border border-border">
-            <blockquote className="font-display text-2xl md:text-3xl text-foreground italic mb-6 leading-relaxed">
-              "We believe in old-fashioned values: showing up when we say we will, 
-              doing the job right, and treating people the way we'd want to be treated."
-            </blockquote>
-            <p className="text-muted-foreground text-lg">
-              — The Bonded Care Team
-            </p>
-          </div>
+          
         </div>
       </div>
     </section>;
