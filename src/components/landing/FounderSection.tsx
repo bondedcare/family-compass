@@ -32,7 +32,7 @@ export const FounderSection = () => {
                 <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
                   <p>For over 25 years, I've built a solid career around one thing: making sure nothing falls through the cracks. Whether coordinating complex schedules, managing logistics, or simply ensuring every detail is handled with care, I've always believed that reliability and attention to detail make all the difference.</p>
 
-                  <p>I started Bonded Care because I saw how much families—especially those caring for aging loved ones, including my own, needed someone they could truly count on. Someone who would show up when promised, handle tasks with discretion, and treat their home and their loved ones with genuine respect.</p>
+                  <p>I started Bonded Care because I saw how much families—especially those caring for aging loved ones like myself, needed someone they could truly count on. Someone who would show up when promised, handle tasks with discretion and a smile, and treat their home and their loved ones with genuine respect.</p>
 
                   <p>
                     I understand how hard it can be to ask for help, and how important it 
