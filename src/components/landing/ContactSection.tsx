@@ -46,7 +46,7 @@ export const ContactSection = () => {
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
               We're Here to Help
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Have a question or ready to get started? Fill out the form below or reach out anytime.</p>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-center text-base">Have a question or ready to get started? Fill out the form below or reach out anytime.</p>
           </div>
 
           <div className="grid gap-12 lg:grid-cols-2">
