@@ -22,11 +22,7 @@ export const HeroSection = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
-            Bonded Care provides friendly, dependable assistance with errands, 
-            deliveries, and everyday tasks—giving you and your loved ones 
-            peace of mind.
-          </p>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">Bonded Care provides affordable, friendly, dependable assistance with errands, deliveries, and everyday tasks—giving you and your loved ones peace of mind and the flexibility of not letting milestones slip through the cracks.</p>
 
           {/* Trust points */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-12">
