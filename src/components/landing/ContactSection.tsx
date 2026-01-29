@@ -22,7 +22,7 @@ export const ContactSection = () => {
     await new Promise(resolve => setTimeout(resolve, 1000));
     setIsSubmitting(false);
     setIsSubmitted(true);
-    toast.success("Thank you! We'll be in touch soon.");
+    toast.success("Thank you! A response will follow shortly.");
     setFormData({
       name: "",
       phone: "",
@@ -44,7 +44,7 @@ export const ContactSection = () => {
               Get in Touch
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-              We're Here to Help
+              Help Is Here When You Need It
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-center text-base">Have a question or ready to get started? Fill out the form below or reach out anytime.</p>
           </div>
@@ -60,7 +60,7 @@ export const ContactSection = () => {
                     Thank You!
                   </h3>
                   <p className="text-muted-foreground text-lg mb-6">
-                    We've received your message and will get back to you soon.
+                    Your message has been received. A response will follow shortly.
                   </p>
                   <Button variant="outline" onClick={() => setIsSubmitted(false)} className="rounded-full">
                     Send Another Message
@@ -90,7 +90,7 @@ export const ContactSection = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="message" className="text-base font-medium">
-                      How Can We Help?
+                      How Can Bonded Care Help?
                     </Label>
                     <Textarea id="message" name="message" placeholder="Tell us a bit about what you need..." value={formData.message} onChange={handleChange} required className="min-h-[150px] text-lg rounded-xl resize-none" />
                   </div>
@@ -109,7 +109,7 @@ export const ContactSection = () => {
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h3 className="font-display text-2xl font-semibold text-foreground mb-6">Connect with us:</h3>
+                <h3 className="font-display text-2xl font-semibold text-foreground mb-6">Get in Touch:</h3>
                 <div className="space-y-6">
                   <a href="tel:+15551234567" className="flex items-start gap-4 p-6 bg-accent/50 rounded-2xl hover:bg-accent transition-colors group">
                     <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
@@ -155,8 +155,8 @@ export const ContactSection = () => {
                 </h4>
                 <p className="text-muted-foreground leading-relaxed">
                   Whether you're ready to get started or just want to ask a few 
-                  questions, I'm happy to chat. There's no obligation—just 
-                  friendly, personal support when you need it.
+                  questions, support is always available. There's no obligation—just 
+                  friendly, personal assistance when you need it.
                 </p>
               </div>
             </div>
