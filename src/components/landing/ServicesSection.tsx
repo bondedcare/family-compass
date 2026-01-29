@@ -40,7 +40,7 @@ export const ServicesSection = () => {
     description: "Light organizing, tidying up, or preparing for visitors—we help keep things comfortable and manageable."
   }, {
     icon: <Wrench className="w-8 h-8" />,
-    title: "Odd Jobs & Small Tasks",
+    title: "Odd Jobs & Animal Care",
     description: "Those little things that pile up—changing batteries, sorting mail, small fixes—we're happy to help."
   }, {
     icon: <Car className="w-8 h-8" />,
