@@ -105,9 +105,7 @@ export const ContactSection = () => {
                       </>}
                   </Button>
 
-                  <p className="text-sm text-muted-foreground text-center">
-                    We typically respond within 24 hours.
-                  </p>
+                  <p className="text-sm text-muted-foreground text-center">Responds within 24 hours.</p>
                 </form>}
             </div>
 
