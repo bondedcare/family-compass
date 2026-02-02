@@ -19,7 +19,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <img alt="Bonded Care" className="h-16 md:h-20 w-auto shadow-none" src="/lovable-uploads/72bd63b7-8c1d-4a6c-917d-4c62ab7eb2de.png" />
+            <img alt="Bonded Care" className="h-16 md:h-20 w-auto" src={logo} />
           </a>
 
           {/* Desktop Navigation */}
