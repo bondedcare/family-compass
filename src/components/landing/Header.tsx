@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Heart, Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/logo.png";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,13 +17,8 @@ export const Header = () => {
       <div className="container px-4 md:px-6">
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
-              <Heart className="w-6 h-6 text-primary-foreground" />
-            </div>
-            <span className="font-display text-2xl md:text-3xl font-semibold text-foreground">
-              Bonded Care
-            </span>
+          <a href="#" className="flex items-center">
+            <img src={logo} alt="Bonded Care" className="h-16 md:h-20 w-auto" />
           </a>
 
           {/* Desktop Navigation */}

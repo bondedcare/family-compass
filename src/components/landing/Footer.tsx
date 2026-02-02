@@ -1,4 +1,5 @@
-import { Heart, Phone, Mail } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,13 +17,8 @@ export const Footer = () => {
           <div className="grid gap-12 md:grid-cols-3">
             {/* Brand */}
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
-                  <Heart className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <span className="font-display text-2xl font-semibold">
-                  Bonded Care
-                </span>
+              <div className="mb-6">
+                <img src={logo} alt="Bonded Care" className="h-20 w-auto brightness-0 invert" />
               </div>
               <p className="text-background/70 leading-relaxed mb-6">
                 Reliable, friendly help for everyday tasks. Giving seniors 
