@@ -18,7 +18,7 @@ export const Footer = () => {
             {/* Brand */}
             <div>
               <div className="mb-6">
-                <img src={logo} alt="Bonded Care" className="h-20 w-auto brightness-0 invert" />
+                <img src={logo} alt="Bonded Care" className="h-20 w-auto" />
               </div>
               <p className="text-background/70 leading-relaxed mb-6">
                 Reliable, friendly help for everyday tasks. Giving seniors 
