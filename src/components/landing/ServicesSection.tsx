@@ -45,7 +45,7 @@ export const ServicesSection = () => {
   }, {
     icon: <Car className="w-8 h-8" />,
     title: "Car Detailing & Care",
-    description: "Basic vehicle cleaning and care to keep your car looking good and ready when needed."
+    description: "From basic washes and interior tidying to more thorough detailing and care, keeping your vehicle looking good and ready whenever you need it."
   }];
   return <section id="services" className="py-20 md:py-28 bg-background">
       <div className="container px-4 md:px-6">
