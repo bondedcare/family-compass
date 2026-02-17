@@ -9,14 +9,14 @@ const ServiceCard = ({
   title,
   description
 }: ServiceCardProps) => {
-  return <div className="group bg-card rounded-2xl p-8 md:p-10 shadow-sm hover:shadow-md transition-all duration-300 border border-border hover:border-primary/30">
+  return <div className="group h-full flex flex-col bg-card rounded-2xl p-8 md:p-10 shadow-sm hover:shadow-md transition-all duration-300 border border-border hover:border-primary/30">
       <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
         <div className="text-primary">{icon}</div>
       </div>
       <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-4">
         {title}
       </h3>
-      <p className="text-muted-foreground text-lg leading-relaxed">
+      <p className="text-muted-foreground text-lg leading-relaxed flex-grow">
         {description}
       </p>
     </div>;
