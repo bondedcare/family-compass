@@ -22,7 +22,8 @@ export const HeroSection = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">Bonded Care provides affordable, friendly, dependable assistance with errands, deliveries, and everyday tasks—giving you and your loved ones peace of mind and the flexibility of not letting milestones slip through the cracks.
+          <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">Bonded Care provides affordable, friendly, dependable assistance with errands, deliveries, and everyday tasks—giving you and your loved ones peace of mind and the flexibility of not letting milestones slip through the cracks. 
+
 If you live in another city, province or country, have a reliable connection in Ottawa to give you peace of mind and feedback.                        
         </p>
 
