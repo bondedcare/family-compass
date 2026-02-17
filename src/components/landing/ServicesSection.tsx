@@ -1,4 +1,4 @@
-import { Package, ShoppingCart, Gift, Home, Wrench, Car } from "lucide-react";
+import { Package, Gift, Home, Wrench, Car, Heart } from "lucide-react";
 interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
@@ -24,12 +24,12 @@ const ServiceCard = ({
 export const ServicesSection = () => {
   const services = [{
     icon: <Package className="w-8 h-8" />,
-    title: "Courier & Deliveries",
-    description: "Packages, documents, and more—picked up and dropped off with care and reliability."
+    title: "Errands & Deliveries",
+    description: "Reliable handling of groceries, prescriptions, packages, and essential deliveries — completed with care and attention."
   }, {
-    icon: <ShoppingCart className="w-8 h-8" />,
-    title: "Grocery Runs & Errands",
-    description: "From weekly groceries to pharmacy pickups, errands are handled so you don't have to."
+    icon: <Heart className="w-8 h-8" />,
+    title: "Check-Ins & Connection",
+    description: "In-person check-ins, quick visits, or scheduled video calls with family members to provide reassurance, companionship, and peace of mind."
   }, {
     icon: <Gift className="w-8 h-8" />,
     title: "Gift Pickup & Delivery",
