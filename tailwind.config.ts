@@ -15,15 +15,19 @@ export default {
   	extend: {
   		fontFamily: {
   			display: [
-  				'Merriweather',
+  				'Lora',
+  				'ui-serif',
+  				'Georgia',
   				'serif'
   			],
   			body: [
-  				'Open Sans',
+  				'Source Sans 3',
+  				'ui-sans-serif',
+  				'system-ui',
   				'sans-serif'
   			],
   			sans: [
-  				'Montserrat',
+  				'Source Sans 3',
   				'ui-sans-serif',
   				'system-ui',
   				'-apple-system',
@@ -36,7 +40,7 @@ export default {
   				'sans-serif'
   			],
   			serif: [
-  				'Cormorant Garamond',
+  				'Lora',
   				'ui-serif',
   				'Georgia',
   				'Cambria',

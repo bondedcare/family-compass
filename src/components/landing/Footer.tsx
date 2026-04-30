@@ -1,4 +1,4 @@
-import { Phone, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 export const Footer = () => {
@@ -7,6 +7,7 @@ export const Footer = () => {
   const quickLinks = [
     { label: "Services", href: "#services" },
     { label: "About", href: "#about" },
+    { label: "Meet Pauline", href: "#founder" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -18,10 +19,14 @@ export const Footer = () => {
             {/* Brand */}
             <div>
               <div className="mb-6">
-                <img src={logo} alt="Bonded Care" className="h-20 w-auto" />
+                <img
+                  src={logo}
+                  alt="Bonded Care"
+                  className="h-16 w-auto brightness-0 invert opacity-90"
+                />
               </div>
-              <p className="text-background/70 leading-relaxed mb-6">
-                Reliable, friendly help for everyday tasks. Giving seniors 
+              <p className="text-background/70 leading-relaxed">
+                Reliable, friendly help for everyday tasks. Giving seniors
                 independence and families peace of mind.
               </p>
             </div>
@@ -51,13 +56,6 @@ export const Footer = () => {
               </h4>
               <div className="space-y-4">
                 <a
-                  href="tel:+15551234567"
-                  className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
-                >
-                  <Phone className="w-5 h-5" />
-                  (555) 123-4567
-                </a>
-                <a
                   href="mailto:pauline@bonded-care.com"
                   className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
                 >
@@ -65,13 +63,17 @@ export const Footer = () => {
                   pauline@bonded-care.com
                 </a>
               </div>
+              <p className="mt-6 text-background/50 text-sm leading-relaxed">
+                Serving Ottawa, Stittsville, Almonte, Carp, Carleton Place,
+                Richmond, Munster, and Perth.
+              </p>
             </div>
           </div>
 
           {/* Bottom */}
           <div className="mt-12 pt-8 border-t border-background/20 text-center">
-            <p className="text-background/60">
-              © {currentYear} Bonded Care. All rights reserved.
+            <p className="text-background/50">
+              &copy; {currentYear} Bonded Care. All rights reserved.
             </p>
           </div>
         </div>
