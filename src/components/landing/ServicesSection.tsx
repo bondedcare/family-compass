@@ -4,20 +4,34 @@ interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
+  image: string;
+  imageAlt: string;
 }
 
-const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
+const ServiceCard = ({ icon, title, description, image, imageAlt }: ServiceCardProps) => {
   return (
-    <div className="group h-full flex flex-col bg-card rounded-2xl p-8 md:p-10 shadow-sm hover:shadow-md transition-all duration-300 border border-border hover:border-primary/20">
-      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
-        <div className="text-primary">{icon}</div>
+    <div className="group h-full flex flex-col bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 border border-border hover:border-primary/20">
+      {/* Service image */}
+      <div className="relative h-48 overflow-hidden">
+        <img
+          src={image}
+          alt={imageAlt}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        <div className="absolute bottom-3 left-3 w-11 h-11 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-sm">
+          <div className="text-primary">{icon}</div>
+        </div>
       </div>
-      <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-3">
-        {title}
-      </h3>
-      <p className="text-muted-foreground text-base md:text-lg leading-relaxed flex-grow">
-        {description}
-      </p>
+      {/* Card content */}
+      <div className="p-7 flex flex-col flex-grow">
+        <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-3">
+          {title}
+        </h3>
+        <p className="text-muted-foreground text-base leading-relaxed flex-grow">
+          {description}
+        </p>
+      </div>
     </div>
   );
 };
@@ -25,40 +39,52 @@ const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
 export const ServicesSection = () => {
   const services = [
     {
-      icon: <Package className="w-7 h-7" />,
+      icon: <Package className="w-6 h-6" />,
       title: "Errands & Deliveries",
       description:
         "Groceries, prescriptions, packages, and essential deliveries — handled with care and attention.",
+      image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=800&q=80",
+      imageAlt: "Paper grocery bags filled with fresh produce",
     },
     {
-      icon: <Heart className="w-7 h-7" />,
+      icon: <Heart className="w-6 h-6" />,
       title: "Check-Ins & Connection",
       description:
         "In-person visits or scheduled video calls with family members for reassurance, companionship, and peace of mind.",
+      image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80",
+      imageAlt: "Two people sharing a warm conversation over tea",
     },
     {
-      icon: <Gift className="w-7 h-7" />,
+      icon: <Gift className="w-6 h-6" />,
       title: "Gift Pickup & Delivery",
       description:
         "Gifts for loved ones picked up and delivered with a personal touch — birthdays, holidays, or just because.",
+      image: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=800&q=80",
+      imageAlt: "Beautifully wrapped gift with ribbon and personal card",
     },
     {
-      icon: <Home className="w-7 h-7" />,
+      icon: <Home className="w-6 h-6" />,
       title: "General Home Help",
       description:
         "Light organizing, tidying up, or preparing for visitors — support to keep things comfortable and manageable.",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80",
+      imageAlt: "Bright and tidy living room with warm natural light",
     },
     {
-      icon: <Wrench className="w-7 h-7" />,
+      icon: <Wrench className="w-6 h-6" />,
       title: "Odd Jobs & Pet Care",
       description:
         "Small fixes around the house, dog walking, pet feeding, and other everyday tasks — help is always available.",
+      image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80",
+      imageAlt: "Friendly golden retriever enjoying a walk outdoors",
     },
     {
-      icon: <Car className="w-7 h-7" />,
+      icon: <Car className="w-6 h-6" />,
       title: "Car Detailing & Care",
       description:
         "From basic washes to thorough detailing — keeping your vehicle looking good and ready when you need it.",
+      image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=800&q=80",
+      imageAlt: "Clean, freshly detailed car gleaming in the sunlight",
     },
   ];
 
@@ -73,7 +99,8 @@ export const ServicesSection = () => {
             Practical Help for Everyday Life
           </h2>
           <p className="text-muted-foreground text-lg">
-            Whether it's a one-time errand or ongoing support, Bonded Care is here when you need it.
+            Whether it's a one-time errand or ongoing support, Bonded Care is
+            here when you need it.
           </p>
         </div>
 
