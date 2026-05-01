@@ -16,13 +16,13 @@ export const Footer = () => {
       <div className="container px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid gap-12 md:grid-cols-3">
-            {/* Brand */}
+            {/* Brand — bigger logo with glow on dark bg */}
             <div>
               <div className="mb-6">
                 <img
                   src={logo}
                   alt="Bonded Care"
-                  className="h-16 w-auto brightness-0 invert opacity-90"
+                  className="h-28 w-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.08)]"
                 />
               </div>
               <p className="text-background/70 leading-relaxed">
