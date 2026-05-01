@@ -38,15 +38,6 @@ export const FounderSection = () => {
 
                 <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    With over 25 years of experience, Bonded Care was built
-                    around one thing: making sure nothing falls through the
-                    cracks. Whether coordinating complex schedules, managing
-                    logistics, or simply ensuring every detail is handled with
-                    care — reliability and attention to detail make all the
-                    difference.
-                  </p>
-
-                  <p>
                     Bonded Care was created because families — especially those
                     caring for aging loved ones — need someone they can truly
                     count on. Someone who shows up when promised, handles tasks
