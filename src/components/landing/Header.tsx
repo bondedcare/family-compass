@@ -15,10 +15,14 @@ export const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container px-4 md:px-6">
-        <div className="flex items-center justify-between h-18 md:h-22">
-          {/* Logo */}
+        <div className="flex items-center justify-between h-24 md:h-28">
+          {/* Logo — larger and more prominent */}
           <a href="#" className="flex items-center">
-            <img alt="Bonded Care" className="h-14 md:h-18 w-auto" src={logo} />
+            <img
+              alt="Bonded Care"
+              className="h-20 md:h-24 w-auto drop-shadow-sm"
+              src={logo}
+            />
           </a>
 
           {/* Desktop Navigation */}
