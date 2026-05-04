@@ -65,7 +65,7 @@ export const Footer = () => {
               </div>
               <p className="mt-6 text-background/50 text-sm leading-relaxed">
                 Serving Ottawa, Stittsville, Almonte, Carp, Carleton Place,
-                Richmond, Munster, and Perth.
+                Richmond, and Munster.
               </p>
             </div>
           </div>
