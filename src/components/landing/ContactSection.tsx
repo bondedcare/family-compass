@@ -30,7 +30,7 @@ export const ContactSection = () => {
       //   3. Copy the form ID (e.g. "xpwzgkby")
       //   4. Replace YOUR_FORM_ID below
       // -------------------------------------------------------
-      const response = await fetch("https://formspree.io/f/xlgzeezk", {
+      const response = await fetch("https://formspree.io/f/mnjwdaww", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
