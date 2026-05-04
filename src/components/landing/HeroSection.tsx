@@ -24,7 +24,7 @@ export const HeroSection = () => {
       </div>
 
       <div className="container px-4 md:px-6 relative z-10">
-        <div className="grid md:grid-cols-[1fr_auto] gap-8 md:gap-12 items-center">
+        <div className="grid md:grid-cols-[1fr_auto] gap-8 md:gap-12 items-start">
           {/* Left — Text content */}
           <div className="max-w-2xl">
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.12] text-balance">
@@ -78,14 +78,14 @@ export const HeroSection = () => {
           </div>
 
           {/* Right — Large featured logo */}
-          <div className="hidden md:flex items-center justify-center">
+          <div className="hidden md:flex items-start justify-end pt-2">
             <div className="relative">
               {/* Soft glow behind the logo */}
               <div className="absolute inset-0 bg-white/10 rounded-full blur-3xl scale-110" />
               <img
                 src={logo}
                 alt="Bonded Care owl logo"
-                className="relative w-56 lg:w-72 h-auto drop-shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+                className="relative w-32 lg:w-40 h-auto drop-shadow-[0_0_40px_rgba(255,255,255,0.15)]"
               />
             </div>
           </div>
