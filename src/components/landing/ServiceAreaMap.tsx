@@ -51,9 +51,9 @@ export const ServiceAreaMap = () => {
 
       const L = (window as any).L;
 
-      // Center map between Ottawa and Perth
+      // Center map over Ottawa and surrounding communities
       const map = L.map(mapRef.current, {
-        center: [45.18, -75.95],
+        center: [45.27, -75.85],
         zoom: 10,
         scrollWheelZoom: false,
         zoomControl: true,
