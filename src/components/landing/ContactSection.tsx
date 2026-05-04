@@ -225,7 +225,7 @@ export const ContactSection = () => {
                       </p>
                       <p className="text-muted-foreground">
                         Proudly serving Ottawa and surrounding areas — Stittsville,
-                        Almonte, Carp, Carleton Place, Richmond, Munster, and Perth.
+                        Almonte, Carp, Carleton Place, Richmond, and Munster.
                       </p>
                     </div>
                   </div>
