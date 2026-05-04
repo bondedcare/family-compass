@@ -85,7 +85,7 @@ export const HeroSection = () => {
               <img
                 src={logo}
                 alt="Bonded Care owl logo"
-                className="relative w-56 lg:w-72 h-auto drop-shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+                className="relative w-32 lg:w-40 h-auto drop-shadow-[0_0_40px_rgba(255,255,255,0.15)]"
               />
             </div>
           </div>
