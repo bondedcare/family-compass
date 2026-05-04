@@ -16,7 +16,6 @@ const locations: ServiceLocation[] = [
   { name: "Carp", lat: 45.3519, lng: -76.0502 },
   { name: "Almonte", lat: 45.2271, lng: -76.1951 },
   { name: "Carleton Place", lat: 45.1407, lng: -76.1432 },
-  { name: "Perth", lat: 44.8990, lng: -76.2494 },
 ];
 
 export const ServiceAreaMap = () => {
