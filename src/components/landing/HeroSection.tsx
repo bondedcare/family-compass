@@ -78,7 +78,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Right — Large featured logo */}
-          <div className="hidden md:flex items-center justify-center">
+          <div className="hidden md:flex items-start justify-end pt-2">
             <div className="relative">
               {/* Soft glow behind the logo */}
               <div className="absolute inset-0 bg-white/10 rounded-full blur-3xl scale-110" />
