@@ -65,7 +65,7 @@ export const HeroSection = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="rounded-full text-lg px-10 py-7 border-2 border-white/40 text-white hover:bg-white/10 hover:text-white"
+                className="rounded-full text-lg px-10 py-7 border-2 border-white/40 bg-white/10 text-purple-200 hover:bg-white/20 hover:text-purple-100"
                 asChild
               >
                 <a href="#services">View Services</a>
