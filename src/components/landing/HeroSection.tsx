@@ -24,7 +24,7 @@ export const HeroSection = () => {
       </div>
 
       <div className="container px-4 md:px-6 relative z-10">
-        <div className="grid md:grid-cols-[1fr_auto] gap-8 md:gap-12 items-center">
+        <div className="grid md:grid-cols-[1fr_auto] gap-8 md:gap-12 items-start">
           {/* Left — Text content */}
           <div className="max-w-2xl">
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.12] text-balance">
