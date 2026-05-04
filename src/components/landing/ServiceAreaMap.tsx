@@ -124,7 +124,7 @@ export const ServiceAreaMap = () => {
         [45.50, -75.60],  // North of Ottawa
         [45.42, -75.55],  // East Ottawa
         [45.10, -75.75],  // South of Richmond
-        [44.84, -76.30],  // South of Perth
+        [45.05, -76.20],  // South of Carleton Place
         [45.18, -76.28],  // West of Almonte
         [45.40, -76.12],  // Northwest of Carp
       ];
