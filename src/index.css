@@ -104,6 +104,12 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
+    background-image:
+      radial-gradient(hsl(var(--primary) / 0.06) 1px, transparent 1px),
+      radial-gradient(hsl(var(--primary) / 0.04) 1px, transparent 1px);
+    background-size: 32px 32px, 32px 32px;
+    background-position: 0 0, 16px 16px;
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
