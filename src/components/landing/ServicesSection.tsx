@@ -1,4 +1,6 @@
 import { Package, Gift, Home, Wrench, Car, Heart } from "lucide-react";
+import checkinImage from "@/assets/service-checkin.jpg";
+import homehelpImage from "@/assets/service-homehelp.jpg";
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -51,7 +53,7 @@ export const ServicesSection = () => {
       title: "Check-Ins & Connection",
       description:
         "In-person visits or scheduled video calls with family members for reassurance, companionship, and peace of mind.",
-      image: "https://images.unsplash.com/photo-1581579438747-104c53e7a6e3?auto=format&fit=crop&w=800&q=80",
+      image: checkinImage,
       imageAlt: "Senior woman smiling warmly during a friendly visit",
     },
     {
@@ -67,7 +69,7 @@ export const ServicesSection = () => {
       title: "General Home Help",
       description:
         "Light organizing, tidying up, or preparing for visitors — support to keep things comfortable and manageable.",
-      image: "https://images.unsplash.com/photo-1447686980491-cb1f9d05a8b6?auto=format&fit=crop&w=800&q=80",
+      image: homehelpImage,
       imageAlt: "Senior enjoying a comfortable, well-kept home",
     },
     {
