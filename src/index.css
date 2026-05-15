@@ -108,6 +108,14 @@
     background-attachment: fixed;
   }
 
+  @media (max-width: 768px) {
+    body {
+      /* Steeper angle + slightly softer wash so the gradient reads consistently on narrow screens */
+      background-image: linear-gradient(160deg, hsl(var(--primary) / 0.04) 0%, hsl(var(--primary) / 0.008) 50%, hsl(var(--primary) / 0.04) 100%);
+      background-attachment: scroll;
+    }
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Lora', ui-serif, Georgia, serif;
     letter-spacing: -0.01em;
