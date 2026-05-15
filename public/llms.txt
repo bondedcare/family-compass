@@ -1,0 +1,13 @@
+# Bonded Care
+
+> Friendly, dependable everyday help for seniors and their families across Ottawa and surrounding areas — errands, check-ins, deliveries, and home help in a calm, professional "Girl Friday" style.
+
+Bonded Care is a local service founded by Pauline Bond, serving Ottawa, Stittsville, Almonte, Carp, Carleton Place, Richmond, and Munster. Services focus on practical, non-medical support that gives seniors independence and families peace of mind.
+
+## Pages
+
+- [Home](/): Overview of services, founder, service area, and contact.
+
+## Optional
+
+- [Sitemap](/sitemap.xml): Machine-readable list of indexable pages.
