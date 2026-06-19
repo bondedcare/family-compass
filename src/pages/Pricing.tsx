@@ -187,7 +187,7 @@ const Pricing = () => {
                 </p>
               </div>
 
-              <div className="grid gap-6 md:grid-cols-3">
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                 {[
                   {
                     icon: <Send className="w-6 h-6" />,
@@ -201,8 +201,13 @@ const Pricing = () => {
                   },
                   {
                     icon: <CreditCard className="w-6 h-6" />,
-                    title: "Credit Card",
-                    desc: "Available on request through a secure invoice link.",
+                    title: "Debit or Credit Card",
+                    desc: "Processed securely through Square — tap, chip, or swipe in person.",
+                  },
+                  {
+                    icon: <Mail className="w-6 h-6" />,
+                    title: "Square Invoice",
+                    desc: "A secure pay-by-card link emailed to you, powered by Square.",
                   },
                 ].map((method) => (
                   <div
