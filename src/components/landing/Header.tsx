@@ -1,15 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X, Mail } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navLinks = [
-    { label: "Services", href: "#services" },
-    { label: "About Us", href: "#about" },
-    { label: "Meet Pauline", href: "#founder" },
-    { label: "Contact", href: "#contact" },
+    { label: "Services", href: "/#services" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "About Us", href: "/#about" },
+    { label: "Meet Pauline", href: "/#founder" },
+    { label: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -17,13 +19,13 @@ export const Header = () => {
       <div className="container px-4 md:px-6">
         <div className="flex items-center justify-between h-24 md:h-28">
           {/* Logo — larger and more prominent */}
-          <a href="#" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img
               alt="Bonded Care"
               className="h-20 md:h-24 w-auto drop-shadow-sm"
               src={logo}
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
@@ -41,7 +43,7 @@ export const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
             <Button size="lg" className="rounded-full text-base px-7" asChild>
-              <a href="#contact">
+              <a href="/#contact">
                 <Mail className="w-4 h-4 mr-2" />
                 Get in Touch
               </a>
@@ -83,7 +85,7 @@ export const Header = () => {
                   className="w-full rounded-full text-lg"
                   asChild
                 >
-                  <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+                  <a href="/#contact" onClick={() => setIsMenuOpen(false)}>
                     <Mail className="w-5 h-5 mr-2" />
                     Get in Touch
                   </a>
