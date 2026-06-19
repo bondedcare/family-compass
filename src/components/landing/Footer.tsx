@@ -5,10 +5,11 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { label: "Services", href: "#services" },
-    { label: "About", href: "#about" },
-    { label: "Meet Pauline", href: "#founder" },
-    { label: "Contact", href: "#contact" },
+    { label: "Services", href: "/#services" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "About", href: "/#about" },
+    { label: "Meet Pauline", href: "/#founder" },
+    { label: "Contact", href: "/#contact" },
   ];
 
   return (
