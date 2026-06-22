@@ -21,12 +21,12 @@ interface PriceRow {
 }
 
 const hourlyServices: PriceRow[] = [
-  { service: "Errands & Deliveries", rate: "$35 / hour", note: "1-hour minimum" },
-  { service: "Check-Ins & Connection (in person)", rate: "$35 / hour" },
+  { service: "Errands & Deliveries", rate: "$40 / hour", note: "1-hour minimum" },
+  { service: "Check-Ins & Connection (in person)", rate: "$40 / hour" },
   { service: "Scheduled Family Video Calls", rate: "$25 / 30 min" },
-  { service: "General Home Help", rate: "$35 / hour" },
-  { service: "Gift Pickup & Delivery", rate: "$35 / hour", note: "Plus cost of gift" },
-  { service: "Odd Jobs & Pet Care", rate: "$35 / hour" },
+  { service: "General Home Help", rate: "$40 / hour" },
+  { service: "Gift Pickup & Delivery", rate: "$40 / hour", note: "Plus cost of gift" },
+  { service: "Odd Jobs & Pet Care", rate: "$40 / hour" },
   { service: "Dog Walking", rate: "$25 / 30 min walk" },
 ];
 
