@@ -23,11 +23,11 @@ interface PriceRow {
 const hourlyServices: PriceRow[] = [
   { service: "Errands & Deliveries", rate: "$40 / hour", note: "1-hour minimum" },
   { service: "Check-Ins & Connection (in person)", rate: "$40 / hour" },
-  { service: "Scheduled Family Video Calls", rate: "$25 / 30 min" },
+  { service: "Scheduled Family Video Calls", rate: "$30 / 30 min" },
   { service: "General Home Help", rate: "$40 / hour" },
   { service: "Gift Pickup & Delivery", rate: "$40 / hour", note: "Plus cost of gift" },
   { service: "Odd Jobs & Pet Care", rate: "$40 / hour" },
-  { service: "Dog Walking", rate: "$25 / 30 min walk" },
+  { service: "Dog Walking", rate: "$30 / 30 min walk" },
 ];
 
 const flatServices: PriceRow[] = [
@@ -155,7 +155,7 @@ const Pricing = () => {
                       <li className="flex gap-2">
                         <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                         Surrounding areas (Stittsville, Almonte, Carp, Carleton
-                        Place, Richmond, Munster): $0.55 / km from Ottawa.
+                        Place, Richmond, Munster): $0.75 / km from Ottawa.
                       </li>
                       <li className="flex gap-2">
                         <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
