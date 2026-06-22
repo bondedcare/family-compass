@@ -203,6 +203,7 @@ const Pricing = () => {
                     icon: <CreditCard className="w-6 h-6" />,
                     title: "Debit or Credit Card",
                     desc: "Processed securely through Square — tap, chip, or swipe in person.",
+                    badges: ["Interac®", "Visa", "Mastercard"],
                   },
                   {
                     icon: <Mail className="w-6 h-6" />,
@@ -223,6 +224,18 @@ const Pricing = () => {
                     <p className="text-muted-foreground leading-relaxed">
                       {method.desc}
                     </p>
+                    {method.badges && (
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        {method.badges.map((b) => (
+                          <span
+                            key={b}
+                            className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-primary/10 text-primary border border-primary/20"
+                          >
+                            {b}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
