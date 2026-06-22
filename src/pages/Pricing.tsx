@@ -241,9 +241,9 @@ const Pricing = () => {
               </div>
 
               <p className="text-center text-sm text-muted-foreground mt-10 max-w-2xl mx-auto">
-                Invoices can be sent by email after each visit (or monthly for
-                recurring clients), with a clear breakdown of time, travel, and
-                any out-of-pocket items.
+                By request, invoices can be sent by email after each visit (or
+                monthly for recurring clients), with a clear breakdown of time,
+                travel, and any out-of-pocket items.
               </p>
             </div>
           </div>
