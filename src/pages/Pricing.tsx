@@ -155,7 +155,7 @@ const Pricing = () => {
                       <li className="flex gap-2">
                         <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                         Surrounding areas (Stittsville, Almonte, Carp, Carleton
-                        Place, Richmond, Munster): $0.55 / km from Ottawa.
+                        Place, Richmond, Munster): $0.75 / km from Ottawa.
                       </li>
                       <li className="flex gap-2">
                         <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
